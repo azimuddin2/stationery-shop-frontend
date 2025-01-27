@@ -1,0 +1,133 @@
+.footer-container {
+    background-color: #0C1324;
+    color: #fff;
+    /* padding: 0px 80px;
+    padding-top: 60px;
+    padding-bottom: 10px; */
+}
+
+.footer {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr;
+    gap: 40px;
+}
+
+.footer-info ul li {
+    list-style: none;
+    margin-left: 0;
+    font-size: 15px;
+    margin-bottom: 10px;
+}
+
+.footer-info ul li a {
+    text-decoration: none;
+    color: #fff;
+}
+
+.icon {
+    margin-right: 12px;
+    font-size: 22px;
+    color: #3F90FC;
+    border: 1px solid #3F90FC;
+    width: 24px;
+    height: 24px;
+    padding: 5px;
+    border-radius: 2px;
+}
+
+.icon:hover {
+    color: #fff;
+    border: 1px solid #fff;
+    cursor: pointer;
+}
+
+.footer-title {
+    margin-bottom: 20px;
+    font-weight: 600;
+    font-size: 19px;
+}
+
+.follow-title {
+    font-weight: 600;
+    font-size: 19px;
+}
+
+.social-icon {
+    margin-top: 12px;
+    display: flex;
+}
+
+.copy-right {
+    text-align: center;
+    margin-top: 60px;
+}
+
+.address-icon {
+    margin-right: 6px;
+    color: #3F90FC;
+    font-size: 17px;
+}
+
+.office-address {
+    display: flex;
+    align-items: center;
+}
+
+
+/* responsive tablet system*/
+@media screen and (min-width: 577px) and (max-width: 991px) {
+    .footer-container {
+        padding: 0px 20px;
+        padding-top: 60px;
+        padding-bottom: 10px;
+    }
+
+    .footer {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 40px;
+    }
+
+    .footer-title {
+        margin-left: 40px;
+    }
+
+    .footer-info ul li {
+        margin-bottom: 8px;
+    }
+
+    .social-icon {
+        margin-left: 0px;
+    }
+}
+
+
+/* responsive mobile system */
+@media screen and (max-width: 576px) {
+    .footer-container {
+        padding: 0px 20px;
+        padding-top: 60px;
+        padding-bottom: 10px;
+    }
+
+    .footer {
+        grid-template-columns: repeat(1, 1fr);
+        gap: 0px;
+    }
+
+    .footer-title {
+        margin-left: 0px;
+    }
+
+    .footer-info ul li {
+        margin-bottom: 8px;
+        margin-left: -40px;
+    }
+
+    .social-icon {
+        text-align: center;
+    }
+
+    .copy-right {
+        margin-top: 50px;
+    }
+}
