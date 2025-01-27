@@ -1,10 +1,5 @@
-
 const DashboardLayout = () => {
-    return (
-        <div>
-            
-        </div>
-    );
+  return <div></div>;
 };
 
 export default DashboardLayout;

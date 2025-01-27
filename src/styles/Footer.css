@@ -1,48 +1,18 @@
 .footer-container {
     background-color: #0C1324;
     color: #fff;
-    /* padding: 0px 80px;
     padding-top: 60px;
-    padding-bottom: 10px; */
 }
 
 .footer {
     display: grid;
     grid-template-columns: 2fr 1fr 1fr 1fr;
     gap: 40px;
-}
-
-.footer-info ul li {
-    list-style: none;
-    margin-left: 0;
-    font-size: 15px;
-    margin-bottom: 10px;
-}
-
-.footer-info ul li a {
-    text-decoration: none;
-    color: #fff;
-}
-
-.icon {
-    margin-right: 12px;
-    font-size: 22px;
-    color: #3F90FC;
-    border: 1px solid #3F90FC;
-    width: 24px;
-    height: 24px;
-    padding: 5px;
-    border-radius: 2px;
-}
-
-.icon:hover {
-    color: #fff;
-    border: 1px solid #fff;
-    cursor: pointer;
+    margin-bottom: 30px;
 }
 
 .footer-title {
-    margin-bottom: 20px;
+    margin-bottom: 50px !important;
     font-weight: 600;
     font-size: 19px;
 }
@@ -52,20 +22,50 @@
     font-size: 19px;
 }
 
-.social-icon {
+.footer-info ul li {
+    list-style: none;
+    margin-left: 0;
+    font-size: 15px;
+    margin-bottom: 10px;
+    color: #a6adbb;
+    font-weight: 500;
+}
+
+.footer-info ul li a {
+    text-decoration: none;
+}
+
+.socials-icon {
     margin-top: 12px;
     display: flex;
 }
 
+.social-icon {
+    margin-right: 12px;
+    font-size: 22px;
+    color: #fff;
+    background-color: #3F90FC;
+    width: 26px;
+    height: 26px;
+    padding: 5px;
+    border-radius: 3px;
+}
+
+.social-icon:hover {
+    color: #fff;
+    border: 1px solid #3F90FC;
+    cursor: pointer;
+}
+
 .copy-right {
     text-align: center;
-    margin-top: 60px;
+    padding: 20px 0px;
 }
 
 .address-icon {
     margin-right: 6px;
     color: #3F90FC;
-    font-size: 17px;
+    font-size: 18px;
 }
 
 .office-address {
@@ -104,7 +104,7 @@
 /* responsive mobile system */
 @media screen and (max-width: 576px) {
     .footer-container {
-        padding: 0px 20px;
+        /* padding: 0px 20px; */
         padding-top: 60px;
         padding-bottom: 10px;
     }
@@ -112,19 +112,31 @@
     .footer {
         grid-template-columns: repeat(1, 1fr);
         gap: 0px;
+        margin-bottom: 0px;
     }
 
     .footer-title {
-        margin-left: 0px;
+        margin-bottom: 50px !important;
+        font-weight: 600;
+        font-size: 19px;
+    }
+
+    .follow-title {
+        font-weight: 600;
+        font-size: 19px;
     }
 
     .footer-info ul li {
-        margin-bottom: 8px;
-        margin-left: -40px;
+        list-style: none;
+        margin-left: 12px;
+        font-size: 15px;
+        margin-bottom: 10px;
+        color: #a6adbb;
+        font-weight: 500;
     }
 
-    .social-icon {
-        text-align: center;
+    .socials-icon {
+        justify-content: center;
     }
 
     .copy-right {
