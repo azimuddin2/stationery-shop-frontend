@@ -5,6 +5,7 @@ import DashboardLayout from '../components/layout/DashboardLayout';
 import { routesGenerator } from '../utils/routesGenerator';
 import { adminPaths } from './admin.routes';
 import { userPaths } from './user.routes';
+import Login from '../pages/login/Login';
 
 const router = createBrowserRouter([
   {
@@ -16,6 +17,10 @@ const router = createBrowserRouter([
         element: <Home />,
       },
     ],
+  },
+  {
+    path: 'login',
+    element: <Login />,
   },
   {
     path: '/admin',

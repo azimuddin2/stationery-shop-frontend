@@ -7,6 +7,8 @@ import { CloseOutlined } from '@ant-design/icons';
 import { Link } from 'react-router-dom';
 import { BreakpointType } from './DashboardLayout';
 import '../../styles/Sidebar.css';
+import { useAppSelector } from '../../redux/hooks';
+import { selectCurrentUser } from '../../redux/features/auth/authSlice';
 
 const { Sider } = Layout;
 
@@ -22,11 +24,11 @@ const userRole = {
 };
 
 const Sidebar = ({ collapsed, setCollapsed, screens }: ChildComponentProps) => {
-  const user = 'admin';
+  const user = useAppSelector(selectCurrentUser);
 
   let sidebarItems;
 
-  switch (user) {
+  switch (user?.role) {
     case userRole.ADMIN:
       sidebarItems = sidebarItemsGenerator(adminPaths, userRole.ADMIN);
       break;
