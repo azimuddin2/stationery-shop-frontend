@@ -95,7 +95,6 @@
         right: 52px;
         display: block;
         opacity: 1;
-        z-index: 1;
     }
 
     #navbar li {
@@ -155,7 +154,7 @@
         right: 16px;
         display: block;
         opacity: 1;
-        z-index: 1;
+        z-index: 10;
     }
 
     #navbar li {

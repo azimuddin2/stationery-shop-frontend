@@ -4,6 +4,7 @@ import { IoClose } from 'react-icons/io5';
 import { Link } from 'react-router-dom';
 import '../../styles/Navbar.css';
 import CustomLink from '../shared/CustomLink';
+import logo from '../../assets/images/dark-logo.png';
 
 const Navbar = () => {
   const [open, setOpen] = useState(false);
@@ -11,9 +12,7 @@ const Navbar = () => {
   return (
     <nav className="header lg:max-w-7xl lg:mx-auto px-5">
       <Link to="/">
-        <h2 className="font-extrabold text-xl text-secondary">
-          Stationery <span className="text-primary">Shop</span>
-        </h2>
+        <img className="w-full h-10 lg:h-16" src={logo} alt="Logo" />
       </Link>
       <ul id="navbar" className={open ? '#navbar active' : '#navbar'}>
         <li>
@@ -26,7 +25,7 @@ const Navbar = () => {
           <Link to="/events">About</Link>
         </li>
         <li>
-          <Link to="/dashboard">Dashboard</Link>
+          <Link to="/admin/dashboard">Dashboard</Link>
         </li>
         <li>
           {/* {

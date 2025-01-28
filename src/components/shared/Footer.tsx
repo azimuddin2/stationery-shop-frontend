@@ -16,9 +16,7 @@ const Footer = () => {
     <footer className="footer-container">
       <div className="footer lg:max-w-7xl lg:mx-auto px-5">
         <div className="footer-info mb-5">
-          <h2 className="font-extrabold text-xl text-white">
-            Stationery <span className="text-primary">Shop</span>
-          </h2>
+          <span className="footer-title">Office Address</span>
           <ul className="mt-2 md:mt-5">
             <li className="office-address">
               <IoLocationOutline className="address-icon" />
