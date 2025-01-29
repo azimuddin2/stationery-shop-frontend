@@ -7,7 +7,7 @@ export const productSchema = z.object({
   brand: z.string({
     required_error: 'Brand is required',
   }),
-  price: z.string({
+  price: z.number({
     required_error: 'Price is required',
   }),
   category: z.string({
@@ -16,10 +16,19 @@ export const productSchema = z.object({
   description: z.string({
     required_error: 'Description is required',
   }),
-  quantity: z.string({
+  quantity: z.number({
     required_error: 'quantity is required',
   }),
-  image: z.string({
-    required_error: 'Image is required',
-  }),
+  image: z
+    .instanceof(File)
+    .refine((file) => file.size <= 5 * 1024 * 1024, {
+      message: 'File size must be less than 5MB',
+    })
+    .refine(
+      (file) =>
+        ['image/png', 'image/jpeg', 'application/pdf'].includes(file.type),
+      {
+        message: 'Only PNG, JPEG, and PDF files are allowed',
+      },
+    ),
 });

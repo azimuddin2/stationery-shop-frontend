@@ -51,7 +51,7 @@ const CreateProduct = () => {
       };
 
       const res = (await addProduct(productData)) as TResponse<TProduct | any>;
-      console.log(res);
+
       if (res.error) {
         toast.error(res.error.data.message, { id: toastId });
       } else {
