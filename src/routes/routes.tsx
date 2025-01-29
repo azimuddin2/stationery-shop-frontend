@@ -6,6 +6,7 @@ import { routesGenerator } from '../utils/routesGenerator';
 import { adminPaths } from './admin.routes';
 import { userPaths } from './user.routes';
 import Login from '../pages/login/Login';
+import Register from '../pages/login/Register';
 
 const router = createBrowserRouter([
   {
@@ -19,10 +20,6 @@ const router = createBrowserRouter([
     ],
   },
   {
-    path: 'login',
-    element: <Login />,
-  },
-  {
     path: '/admin',
     element: <DashboardLayout />,
     children: routesGenerator(adminPaths),
@@ -31,6 +28,14 @@ const router = createBrowserRouter([
     path: '/user',
     element: <DashboardLayout />,
     children: routesGenerator(userPaths),
+  },
+  {
+    path: 'login',
+    element: <Login />,
+  },
+  {
+    path: 'register',
+    element: <Register />,
   },
 ]);
 

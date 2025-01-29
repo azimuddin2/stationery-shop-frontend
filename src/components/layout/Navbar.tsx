@@ -5,9 +5,17 @@ import { Link } from 'react-router-dom';
 import '../../styles/Navbar.css';
 import CustomLink from '../shared/CustomLink';
 import logo from '../../assets/images/dark-logo.png';
+import { useAppDispatch, useAppSelector } from '../../redux/hooks';
+import { logout, selectCurrentUser } from '../../redux/features/auth/authSlice';
 
 const Navbar = () => {
   const [open, setOpen] = useState(false);
+  const dispatch = useAppDispatch();
+  const user = useAppSelector(selectCurrentUser);
+
+  const handleLogout = () => {
+    dispatch(logout());
+  };
 
   return (
     <nav className="header lg:max-w-7xl lg:mx-auto px-5">
@@ -28,26 +36,15 @@ const Navbar = () => {
           <Link to="/admin/dashboard">Dashboard</Link>
         </li>
         <li>
-          {/* {
-                            user?.uid ?
-                                (
-                                    <button
-                                        onClick={handleLogOut}
-                                        className='register-btn'
-                                    >
-                                        SignOut
-                                    </button>
-                                )
-                                :
-                                (
-                                    <button className='register-btn'>
-                                        <Link to="/register">Login</Link>
-                                    </button>
-                                )
-                        } */}
-          <button className="register-btn">
-            <Link to="/login">Login</Link>
-          </button>
+          {user?.email ? (
+            <button onClick={handleLogout} className="register-btn">
+              Logout
+            </button>
+          ) : (
+            <Link to="/login">
+              <button className="register-btn">Login</button>
+            </Link>
+          )}
         </li>
       </ul>
       <div id="mobile" onClick={() => setOpen(!open)}>

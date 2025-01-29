@@ -5,10 +5,10 @@ import { toast } from 'sonner';
 import { setUser, TUser } from '../../redux/features/auth/authSlice';
 import { FieldValues, SubmitHandler } from 'react-hook-form';
 import { useAppDispatch } from '../../redux/hooks';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { useLoginMutation } from '../../redux/features/auth/authApi';
 import { zodResolver } from '@hookform/resolvers/zod';
-import { loginFormSchema } from '../../schemas/loginForm.schema';
+import { loginFormSchema } from '../../schemas/auth.schema';
 import { verifyToken } from '../../utils/verifyToken';
 
 const Login = () => {
@@ -48,6 +48,7 @@ const Login = () => {
             Login
           </Button>
         </CustomForm>
+        <Link to="/register">Please Register</Link>
       </Col>
     </Flex>
   );
