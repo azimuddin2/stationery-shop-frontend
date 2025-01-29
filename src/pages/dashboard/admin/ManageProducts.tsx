@@ -1,9 +1,13 @@
 import { useState } from 'react';
 import { TQueryParam } from '../../../types';
-import { useGetAllProductQuery } from '../../../redux/features/product/productApi';
+import {
+  useDeleteProductMutation,
+  useGetAllProductQuery,
+} from '../../../redux/features/product/productApi';
 import { Button, Pagination, Table, TableColumnsType, TableProps } from 'antd';
 import { TProduct } from '../../../types/product.type';
 import UpdateProductModal from './UpdateProductModal';
+import Swal from 'sweetalert2';
 
 type TTableData = Pick<
   TProduct,
@@ -25,11 +29,14 @@ const ManageProducts = () => {
     ...params,
   ]);
 
+  const [deleteProduct] = useDeleteProductMutation();
+
   const metaData = productsData?.meta;
 
   const tableData = productsData?.data?.map(
     ({ _id, name, brand, price, category, description, quantity }) => ({
       key: _id,
+      _id,
       name,
       brand,
       category,
@@ -38,6 +45,28 @@ const ManageProducts = () => {
       quantity,
     }),
   );
+
+  const handleDelete = async (item: TProduct) => {
+    Swal.fire({
+      title: 'Are you sure?',
+      text: `This product - ${item.name}`,
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: '#3F90FC',
+      cancelButtonColor: '#d33',
+      confirmButtonText: 'Yes, delete it!',
+    }).then(async (result) => {
+      if (result.isConfirmed) {
+        try {
+          await deleteProduct(item._id).unwrap();
+          Swal.fire('Deleted!', 'Your product has been deleted.', 'success');
+          refetch(); // ✅ Refresh the product list after deletion
+        } catch (error) {
+          Swal.fire('Error!', 'Something went wrong.', 'error');
+        }
+      }
+    });
+  };
 
   const columns: TableColumnsType<TTableData> = [
     {
@@ -97,7 +126,9 @@ const ManageProducts = () => {
         return (
           <div>
             <UpdateProductModal productInfo={item} refetch={refetch} />
-            <Button>Delete</Button>
+            <Button danger onClick={() => handleDelete(item)}>
+              Delete
+            </Button>
           </div>
         );
       },

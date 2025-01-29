@@ -7,7 +7,7 @@ export const productSchema = z.object({
   brand: z.string({
     required_error: 'Brand is required',
   }),
-  price: z.number({
+  price: z.string({
     required_error: 'Price is required',
   }),
   category: z.string({
@@ -16,7 +16,7 @@ export const productSchema = z.object({
   description: z.string({
     required_error: 'Description is required',
   }),
-  quantity: z.number({
+  quantity: z.string({
     required_error: 'quantity is required',
   }),
   image: z

@@ -46,7 +46,7 @@ const UpdateProductModal = ({
         quantity: Number(data.quantity),
       };
       const res = (await updateProduct({
-        id: productInfo.key,
+        id: productInfo._id,
         body: productData,
       })) as TResponse<TProduct | any>;
 
