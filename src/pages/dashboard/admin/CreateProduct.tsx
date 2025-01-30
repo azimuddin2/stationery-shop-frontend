@@ -53,13 +53,13 @@ const CreateProduct = () => {
       const res = (await addProduct(productData)) as TResponse<TProduct | any>;
 
       if (res.error) {
-        toast.error(res.error.data.message, { id: toastId });
+        toast.error(res.error.data.message, { id: toastId, duration: 2000 });
       } else {
-        toast.success(res.data.message, { id: toastId });
+        toast.success(res.data.message, { id: toastId, duration: 2000 });
         navigate('/admin/manage-products');
       }
     } catch (error) {
-      toast.error('Something went wrong', { id: toastId });
+      toast.error('Something went wrong', { id: toastId, duration: 2000 });
     }
   };
 
