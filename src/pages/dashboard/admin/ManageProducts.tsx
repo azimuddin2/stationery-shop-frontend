@@ -17,7 +17,7 @@ type TTableData = Pick<
 const ManageProducts = () => {
   const [params, setParams] = useState<TQueryParam[]>([]);
   const [page, setPage] = useState(1);
-  const [limit, setLimit] = useState(3);
+  const [limit, setLimit] = useState(4);
   const {
     data: productsData,
     isFetching,
@@ -60,7 +60,7 @@ const ManageProducts = () => {
         try {
           await deleteProduct(item._id).unwrap();
           Swal.fire('Deleted!', 'Your product has been deleted.', 'success');
-          refetch(); // ✅ Refresh the product list after deletion
+          refetch();
         } catch (error) {
           Swal.fire('Error!', 'Something went wrong.', 'error');
         }
@@ -163,6 +163,7 @@ const ManageProducts = () => {
           dataSource={tableData}
           onChange={onChange}
           pagination={false}
+          scroll={{ x: 'max-content' }}
         />
         <Pagination
           style={{ margin: '20px' }}

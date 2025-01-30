@@ -7,6 +7,7 @@ import { adminPaths } from './admin.routes';
 import { userPaths } from './user.routes';
 import Login from '../pages/login/Login';
 import Register from '../pages/login/Register';
+import Products from '../pages/products/Products';
 
 const router = createBrowserRouter([
   {
@@ -16,6 +17,10 @@ const router = createBrowserRouter([
       {
         index: true,
         element: <Home />,
+      },
+      {
+        path: 'products',
+        element: <Products />,
       },
     ],
   },
