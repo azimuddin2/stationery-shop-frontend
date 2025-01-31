@@ -10,6 +10,7 @@ import Register from '../pages/login/Register';
 import Products from '../pages/products/Products';
 import ProductDetail from '../pages/ProductDetail/ProductDetail';
 import Cart from '../pages/cart/Cart';
+import ProtectedRoute from '../components/layout/ProtectedRoute';
 
 const router = createBrowserRouter([
   {
@@ -30,18 +31,30 @@ const router = createBrowserRouter([
       },
       {
         path: 'cart',
-        element: <Cart />,
+        element: (
+          <ProtectedRoute>
+            <Cart />
+          </ProtectedRoute>
+        ),
       },
     ],
   },
   {
     path: '/admin',
-    element: <DashboardLayout />,
+    element: (
+      <ProtectedRoute>
+        <DashboardLayout />
+      </ProtectedRoute>
+    ),
     children: routesGenerator(adminPaths),
   },
   {
     path: '/user',
-    element: <DashboardLayout />,
+    element: (
+      <ProtectedRoute>
+        <DashboardLayout />
+      </ProtectedRoute>
+    ),
     children: routesGenerator(userPaths),
   },
   {
