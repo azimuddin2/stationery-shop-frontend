@@ -1,9 +1,10 @@
-import { Button, Card, Table, TableColumnsType, Tag } from 'antd';
+import { Card, Table, TableColumnsType, Tag } from 'antd';
 import { useGetOrdersByEmailQuery } from '../../../redux/features/order/orderApi';
 import { TOrder } from '../../../types/order.type';
 import { useAppSelector } from '../../../redux/hooks';
 import { selectCurrentUser } from '../../../redux/features/auth/authSlice';
 import { useEffect, useState } from 'react';
+import PaymentModal from './PaymentModal';
 
 type TTableData = Pick<TOrder, 'email' | 'totalPrice' | 'status'>;
 
@@ -21,6 +22,7 @@ const OrdersList = () => {
     data: ordersData,
     isLoading,
     isFetching,
+    refetch,
   } = useGetOrdersByEmailQuery(email!, { skip: !email });
 
   const tableData = ordersData?.map(({ _id, email, totalPrice, status }) => ({
@@ -60,15 +62,10 @@ const OrdersList = () => {
     {
       title: 'Action',
       key: 'x',
-      render: () => {
+      render: (item) => {
         return (
           <div>
-            <Button type='default' htmlType="submit">
-              Pay
-            </Button>
-            <Button danger htmlType="submit">
-              Delete
-            </Button>
+            <PaymentModal paymentInfo={item} refetch={refetch} />
           </div>
         );
       },
@@ -84,7 +81,7 @@ const OrdersList = () => {
       <Card
         title="My Orders"
         bordered={false}
-        style={{ maxWidth: 800, margin: '20px auto', paddingBottom: '30px', }}
+        style={{ maxWidth: 800, margin: '20px auto', paddingBottom: '30px' }}
       >
         <Table
           loading={isFetching}

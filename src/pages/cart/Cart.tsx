@@ -42,7 +42,7 @@ const Cart = () => {
         toast.error(res.error.data.message, { id: toastId, duration: 2000 });
       } else {
         toast.success(res.message, { id: toastId, duration: 2000 });
-        navigate(`/${user?.role}/dashboard`);
+        navigate(`/${user?.role}/order-view`);
       }
     } catch (error) {
       toast.error('Something went wrong', { id: toastId, duration: 2000 });
