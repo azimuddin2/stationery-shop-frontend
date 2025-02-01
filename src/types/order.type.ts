@@ -12,6 +12,7 @@ export type TOrder = {
   items: TItem[];
   totalPrice: number;
   status: string;
+  paid: boolean;
   createdAt: string;
   updatedAt: string;
 };

@@ -1,3 +1,4 @@
+import { TPayment } from '../../../types/payment.type';
 import { baseApi } from '../../api/baseApi';
 
 const paymentApi = baseApi.injectEndpoints({
@@ -16,15 +17,18 @@ const paymentApi = baseApi.injectEndpoints({
         body: paymentInfo,
       }),
     }),
-    // getPaymentsByEmail: builder.query({
-    //     query: (email: string) => ({
-    //         url: `/orders/my-orders?email=${email}`,
-    //         method: 'GET',
-    //     }),
-    //     transformResponse: (response: any) => response.data,
-    // }),
+    getPaymentsByEmail: builder.query<TPayment[], string>({
+      query: (email: string) => ({
+        url: `/payments?email=${email}`,
+        method: 'GET',
+      }),
+      transformResponse: (response: any) => response.data,
+    }),
   }),
 });
 
-export const { useCreatePaymentIntentMutation, useProcessPaymentMutation } =
-  paymentApi;
+export const {
+  useCreatePaymentIntentMutation,
+  useProcessPaymentMutation,
+  useGetPaymentsByEmailQuery,
+} = paymentApi;

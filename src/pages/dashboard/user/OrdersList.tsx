@@ -5,8 +5,9 @@ import { useAppSelector } from '../../../redux/hooks';
 import { selectCurrentUser } from '../../../redux/features/auth/authSlice';
 import { useEffect, useState } from 'react';
 import PaymentModal from './PaymentModal';
+import { useGetPaymentsByEmailQuery } from '../../../redux/features/payment/paymentApi';
 
-type TTableData = Pick<TOrder, 'email' | 'totalPrice' | 'status'>;
+type TTableData = Pick<TOrder, 'email' | 'totalPrice' | 'status' | 'paid'>;
 
 const OrdersList = () => {
   const user = useAppSelector(selectCurrentUser);
@@ -20,17 +21,29 @@ const OrdersList = () => {
 
   const {
     data: ordersData,
-    isLoading,
     isFetching,
     refetch,
   } = useGetOrdersByEmailQuery(email!, { skip: !email });
 
-  const tableData = ordersData?.map(({ _id, email, totalPrice, status }) => ({
+  const tableData = ordersData?.map(
+    ({ _id, email, totalPrice, status, paid }) => ({
+      key: _id,
+      _id,
+      email,
+      totalPrice,
+      status,
+      paid,
+    }),
+  );
+
+  const { data: paymentsData } = useGetPaymentsByEmailQuery(email!, {
+    skip: !email,
+  });
+
+  paymentsData?.map(({ _id, status, transactionId }) => ({
     key: _id,
-    _id,
-    email,
-    totalPrice,
     status,
+    transactionId,
   }));
 
   const columns: TableColumnsType<TTableData> = [
@@ -65,34 +78,32 @@ const OrdersList = () => {
       render: (item) => {
         return (
           <div>
-            <PaymentModal paymentInfo={item} refetch={refetch} />
+            {item.paid === true ? (
+              <Tag color="green">Payment Completed</Tag>
+            ) : (
+              <PaymentModal paymentInfo={item} refetch={refetch} />
+            )}
           </div>
         );
       },
     },
   ];
 
-  if (isLoading) {
-    return <p>Loading...</p>;
-  }
-
   return (
-    <div>
-      <Card
-        title="My Orders"
-        bordered={false}
-        style={{ maxWidth: 800, margin: '20px auto', paddingBottom: '30px' }}
-      >
-        <Table
-          loading={isFetching}
-          dataSource={tableData}
-          columns={columns}
-          rowKey="_id"
-          pagination={false}
-          scroll={{ x: 'max-content' }}
-        />
-      </Card>
-    </div>
+    <Card
+      title="My Orders"
+      bordered={false}
+      style={{ maxWidth: 900, margin: '20px auto', paddingBottom: '30px' }}
+    >
+      <Table
+        loading={isFetching}
+        dataSource={tableData}
+        columns={columns}
+        rowKey="_id"
+        pagination={false}
+        scroll={{ x: 'max-content' }}
+      />
+    </Card>
   );
 };
 

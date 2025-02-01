@@ -13,12 +13,14 @@ import '../../../styles/CheckoutForm.css';
 
 type TCheckoutFormProps = {
   price: number;
+  orderId: string;
   refetch: () => void;
   setIsModalOpen: React.Dispatch<React.SetStateAction<boolean>>;
 };
 
 const CheckoutForm = ({
   price,
+  orderId,
   refetch,
   setIsModalOpen,
 }: TCheckoutFormProps) => {
@@ -98,17 +100,22 @@ const CheckoutForm = ({
         email: user?.email,
         amount: price,
         transactionId: paymentIntent.id,
+        orderId,
       };
 
       // ✅ Process Payment in Backend
       try {
-        await processPayment(paymentData).unwrap();
-        refetch();
-        toast.success(`Transaction Successful! ID: ${paymentIntent.id}`, {
-          id: toastId,
-          duration: 2000,
-        });
-        navigate('/user/payment-history');
+        const res = await processPayment(paymentData).unwrap();
+        console.log(res);
+        if (res.data) {
+          refetch();
+          toast.success(`Transaction Successful! ID: ${paymentIntent.id}`, {
+            id: toastId,
+            duration: 2000,
+          });
+          setIsModalOpen(false);
+          navigate('/user/payment-history');
+        }
       } catch (error) {
         toast.error('Failed to save payment data.', {
           id: toastId,

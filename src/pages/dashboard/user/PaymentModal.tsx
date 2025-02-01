@@ -15,6 +15,7 @@ const stripePromise = loadStripe(import.meta.env.VITE_APP_Payment_Gateway_PK);
 const PaymentModal = ({ paymentInfo, refetch }: TPaymentModalProps) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const price = paymentInfo.totalPrice as number;
+  const orderId = paymentInfo._id as string;
 
   const showModal = () => {
     setIsModalOpen(true);
@@ -36,6 +37,7 @@ const PaymentModal = ({ paymentInfo, refetch }: TPaymentModalProps) => {
         <Elements stripe={stripePromise}>
           <CheckoutForm
             price={price}
+            orderId={orderId}
             refetch={refetch}
             setIsModalOpen={setIsModalOpen}
           />
