@@ -13,6 +13,7 @@ export type TOrder = {
   totalPrice: number;
   status: string;
   paid: boolean;
+  transactionId?: string;
   createdAt: string;
   updatedAt: string;
 };

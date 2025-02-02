@@ -1,0 +1,272 @@
+[
+    {
+        "name": "Luxury Fountain Pen Set",
+        "brand": "Story Weave",
+        "price": 260,
+        "category": "Writing",
+        "description": "Eloquent JavaScript Discover premium stationery that inspires creativity and productivity. From elegant notebooks and quality pens to vibrant art supplies and planning essentials, we bring the tools you need to organize, create, and express your ideas beautifully.",
+        "image": "https://i.ibb.co.com/q3BgNn0t/writing3.jpg",
+        "quantity": 28
+    },
+    {
+        "name": "Sharp Stainless Scissors",
+        "brand": "Bound & Beyond",
+        "price": 270,
+        "category": "Office Supplies",
+        "description": "Eloquent JavaScript Discover premium stationery that inspires creativity and productivity. From elegant notebooks and quality pens to vibrant art supplies and planning essentials, we bring the tools you need to organize, create, and express your ideas beautifully.",
+        "image": "https://i.ibb.co.com/4cfcsDK/office-supplies4.jpg",
+        "quantity": 12
+    },
+    {
+        "name": "Geometry Box with Ruler",
+        "brand": "Bound & Beyond",
+        "price": 120,
+        "category": "Educational",
+        "description": "Eloquent JavaScript Discover premium stationery that inspires creativity and productivity. From elegant notebooks and quality pens to vibrant art supplies and planning essentials, we bring the tools you need to organize, create, and express your ideas beautifully.",
+        "image": "https://i.ibb.co.com/MxtX0w27/educational4.jpg",
+        "quantity": 25
+    },
+    {
+        "name": "Digital Stylus Keyboard",
+        "brand": "Story Weave",
+        "price": 300,
+        "category": "Technology",
+        "description": "Eloquent JavaScript Discover premium stationery that inspires creativity and productivity. From elegant notebooks and quality pens to vibrant art supplies and planning essentials, we bring the tools you need to organize, create, and express your ideas beautifully.",
+        "image": "https://i.ibb.co.com/G4x8BC07/technology6.jpg",
+        "quantity": 16
+    },
+    {
+        "name": "Acrylic Paint Tube Pack",
+        "brand": "Moleskine",
+        "price": 190,
+        "category": "Art Supplies",
+        "description": "Eloquent JavaScript Discover premium stationery that inspires creativity and productivity. From elegant notebooks and quality pens to vibrant art supplies and planning essentials, we bring the tools you need to organize, create, and express your ideas beautifully.",
+        "image": "https://i.ibb.co.com/B5JVcJKb/art-supplies2.jpg",
+        "quantity": 26
+    },
+    {
+        "name": "Transparent Sticky Notes",
+        "brand": "Whispering Pages",
+        "price": 220,
+        "category": "Office Supplies",
+        "description": "Eloquent JavaScript Discover premium stationery that inspires creativity and productivity. From elegant notebooks and quality pens to vibrant art supplies and planning essentials, we bring the tools you need to organize, create, and express your ideas beautifully.",
+        "image": "https://i.ibb.co.com/JWjWtK7Q/office-supplies3.jpg",
+        "quantity": 18
+    },
+    {
+        "name": "Smart Desk Computer",
+        "brand": "Shelf Worth",
+        "price": 700,
+        "category": "Technology",
+        "description": "Eloquent JavaScript Discover premium stationery that inspires creativity and productivity. From elegant notebooks and quality pens to vibrant art supplies and planning essentials, we bring the tools you need to organize, create, and express your ideas beautifully.",
+        "image": "https://i.ibb.co.com/MxRCnvm1/technology2.jpg",
+        "quantity": 30
+    },
+    {
+        "name": "Ultra Glide Ballpoint Pen",
+        "brand": "Moleskine",
+        "price": 180,
+        "category": "Writing",
+        "description": "Eloquent JavaScript Discover premium stationery that inspires creativity and productivity. From elegant notebooks and quality pens to vibrant art supplies and planning essentials, we bring the tools you need to organize, create, and express your ideas beautifully.",
+        "image": "https://i.ibb.co.com/5HVZWBY/writing4.jpg",
+        "quantity": 10
+    },
+    {
+        "name": "Illustrated Atlas Book",
+        "brand": "Story Weave",
+        "price": 200,
+        "category": "Educational",
+        "description": "Eloquent JavaScript Discover premium stationery that inspires creativity and productivity. From elegant notebooks and quality pens to vibrant art supplies and planning essentials, we bring the tools you need to organize, create, and express your ideas beautifully.",
+        "image": "https://i.ibb.co.com/qYKdhxDV/educational2.jpg",
+        "quantity": 20
+    },
+    {
+        "name": "Fine-Tip Paintbrush Kit",
+        "brand": "Bound & Beyond",
+        "price": 260,
+        "category": "Art Supplies",
+        "description": "Eloquent JavaScript Discover premium stationery that inspires creativity and productivity. From elegant notebooks and quality pens to vibrant art supplies and planning essentials, we bring the tools you need to organize, create, and express your ideas beautifully.",
+        "image": "https://i.ibb.co.com/6RsjgjHZ/art-supplies3.jpg",
+        "quantity": 6
+    },
+    {
+        "name": "Noise-Canceling Headset",
+        "brand": "Bound & Beyond",
+        "price": 200,
+        "category": "Technology",
+        "description": "Eloquent JavaScript Discover premium stationery that inspires creativity and productivity. From elegant notebooks and quality pens to vibrant art supplies and planning essentials, we bring the tools you need to organize, create, and express your ideas beautifully.",
+        "image": "https://i.ibb.co.com/0jV8ZvM8/technology5.jpg",
+        "quantity": 20
+    },
+    {
+        "name": "Heavy-Duty Stapler Kit",
+        "brand": "Moleskine",
+        "price": 280,
+        "category": "Office Supplies",
+        "description": "Eloquent JavaScript Discover premium stationery that inspires creativity and productivity. From elegant notebooks and quality pens to vibrant art supplies and planning essentials, we bring the tools you need to organize, create, and express your ideas beautifully.",
+        "image": "https://i.ibb.co.com/9mLfDCS4/office-supplies5.jpg",
+        "quantity": 30
+    },
+    {
+        "name": "Kids Learning Flashcards",
+        "brand": "Shelf Worth",
+        "price": 170,
+        "category": "Educational",
+        "description": "Eloquent JavaScript Discover premium stationery that inspires creativity and productivity. From elegant notebooks and quality pens to vibrant art supplies and planning essentials, we bring the tools you need to organize, create, and express your ideas beautifully.",
+        "image": "https://i.ibb.co.com/WvVP2r8f/educational1.jpg",
+        "quantity": 24
+    },
+    {
+        "name": "Charcoal Sketching Set",
+        "brand": "Whispering Pages",
+        "price": 240,
+        "category": "Art Supplies",
+        "description": "Eloquent JavaScript Discover premium stationery that inspires creativity and productivity. From elegant notebooks and quality pens to vibrant art supplies and planning essentials, we bring the tools you need to organize, create, and express your ideas beautifully.",
+        "image": "https://i.ibb.co.com/1fw6s2Vz/art-supplies5.jpg",
+        "quantity": 12
+    },
+    {
+        "name": "Calligraphy Brush Pens",
+        "brand": "Bound & Beyond",
+        "price": 236,
+        "category": "Writing",
+        "description": "Eloquent JavaScript Discover premium stationery that inspires creativity and productivity. From elegant notebooks and quality pens to vibrant art supplies and planning essentials, we bring the tools you need to organize, create, and express your ideas beautifully.",
+        "image": "https://i.ibb.co.com/qY3xvQrt/writing6.jpg",
+        "quantity": 16
+    },
+    {
+        "name": "Portable Hard Drive SSD",
+        "brand": "Whispering Pages",
+        "price": 250,
+        "category": "Technology",
+        "description": "Eloquent JavaScript Discover premium stationery that inspires creativity and productivity. From elegant notebooks and quality pens to vibrant art supplies and planning essentials, we bring the tools you need to organize, create, and express your ideas beautifully.",
+        "image": "https://i.ibb.co.com/tM4kYSmH/technology4.jpg",
+        "quantity": 22
+    },
+    {
+        "name": "Whiteboard Marker Pack",
+        "brand": "Moleskine",
+        "price": 299,
+        "category": "Office Supplies",
+        "description": "Eloquent JavaScript Discover premium stationery that inspires creativity and productivity. From elegant notebooks and quality pens to vibrant art supplies and planning essentials, we bring the tools you need to organize, create, and express your ideas beautifully.",
+        "image": "https://i.ibb.co.com/3ZSfRsq/office-supplies1.jpg",
+        "quantity": 36
+    },
+    {
+        "name": "Magnetic Alphabet Board",
+        "brand": "Shelf Worth",
+        "price": 120,
+        "category": "Educational",
+        "description": "Eloquent JavaScript Discover premium stationery that inspires creativity and productivity. From elegant notebooks and quality pens to vibrant art supplies and planning essentials, we bring the tools you need to organize, create, and express your ideas beautifully.",
+        "image": "https://i.ibb.co.com/SDF0TfZh/educational3.jpg",
+        "quantity": 28
+    },
+    {
+        "name": "Classic Wooden Pencils",
+        "brand": "Whispering Pages",
+        "price": 199,
+        "category": "Writing",
+        "description": "Eloquent JavaScript Discover premium stationery that inspires creativity and productivity. From elegant notebooks and quality pens to vibrant art supplies and planning essentials, we bring the tools you need to organize, create, and express your ideas beautifully.",
+        "image": "https://i.ibb.co.com/qYKygqNq/writing2.jpg",
+        "quantity": 25
+    },
+    {
+        "name": "Sketchbook Drawing Pad",
+        "brand": "Story Weave",
+        "price": 190,
+        "category": "Art Supplies",
+        "description": "Eloquent JavaScript Discover premium stationery that inspires creativity and productivity. From elegant notebooks and quality pens to vibrant art supplies and planning essentials, we bring the tools you need to organize, create, and express your ideas beautifully.",
+        "image": "https://i.ibb.co.com/bgqyxhWq/art-supplies4.jpg",
+        "quantity": 24
+    },
+    {
+        "name": "Wireless Ergonomic Mouse",
+        "brand": "Shelf Worth",
+        "price": 180,
+        "category": "Technology",
+        "description": "Eloquent JavaScript Discover premium stationery that inspires creativity and productivity. From elegant notebooks and quality pens to vibrant art supplies and planning essentials, we bring the tools you need to organize, create, and express your ideas beautifully.",
+        "image": "https://i.ibb.co.com/bgrXsVsk/technology1.jpg",
+        "quantity": 26
+    },
+    {
+        "name": "Smooth Flow Gel Ink Pen",
+        "brand": "Moleskine",
+        "price": 140,
+        "category": "Writing",
+        "description": "Eloquent JavaScript Discover premium stationery that inspires creativity and productivity. From elegant notebooks and quality pens to vibrant art supplies and planning essentials, we bring the tools you need to organize, create, and express your ideas beautifully.",
+        "image": "https://i.ibb.co.com/jZDhD92J/writing1.jpg",
+        "quantity": 12
+    },
+    {
+        "name": "Adjustable Desk Holder",
+        "brand": "Bound & Beyond",
+        "price": 230,
+        "category": "Office Supplies",
+        "description": "Eloquent JavaScript Discover premium stationery that inspires creativity and productivity. From elegant notebooks and quality pens to vibrant art supplies and planning essentials, we bring the tools you need to organize, create, and express your ideas beautifully.",
+        "image": "https://i.ibb.co.com/MDsmKXd8/office-supplies2.jpg",
+        "quantity": 20
+    },
+    {
+        "name": "Handwriting Workbook",
+        "brand": "Story Weave",
+        "price": 180,
+        "category": "Educational",
+        "description": "Eloquent JavaScript Discover premium stationery that inspires creativity and productivity. From elegant notebooks and quality pens to vibrant art supplies and planning essentials, we bring the tools you need to organize, create, and express your ideas beautifully.",
+        "image": "https://i.ibb.co.com/sJPScmx4/educational6.jpg",
+        "quantity": 32
+    },
+    {
+        "name": "Soft Pastel Colors Box",
+        "brand": "Moleskine",
+        "price": 220,
+        "category": "Art Supplies",
+        "description": "Eloquent JavaScript Discover premium stationery that inspires creativity and productivity. From elegant notebooks and quality pens to vibrant art supplies and planning essentials, we bring the tools you need to organize, create, and express your ideas beautifully.",
+        "image": " https://i.ibb.co.com/3YrSgCtf/art-supplies6.jpg",
+        "quantity": 18
+    },
+    {
+        "name": "Smart Notebook with App",
+        "brand": "Shelf Worth",
+        "price": 234,
+        "category": "Technology",
+        "description": "Eloquent JavaScript Discover premium stationery that inspires creativity and productivity. From elegant notebooks and quality pens to vibrant art supplies and planning essentials, we bring the tools you need to organize, create, and express your ideas beautifully.",
+        "image": "https://i.ibb.co.com/KxRKscZB/technology3.jpg",
+        "quantity": 20
+    },
+    {
+        "name": "Science Experiment Kit",
+        "brand": "Whispering Pages",
+        "price": 150,
+        "category": "Educational",
+        "description": "Eloquent JavaScript Discover premium stationery that inspires creativity and productivity. From elegant notebooks and quality pens to vibrant art supplies and planning essentials, we bring the tools you need to organize, create, and express your ideas beautifully.",
+        "image": "https://i.ibb.co.com/hJgg0wqJ/educational5.jpg",
+        "quantity": 20
+    },
+    {
+        "name": "Waterproof Marker Set",
+        "brand": "Whispering Pages",
+        "price": 200,
+        "category": "Writing",
+        "description": "Eloquent JavaScript Discover premium stationery that inspires creativity and productivity. From elegant notebooks and quality pens to vibrant art supplies and planning essentials, we bring the tools you need to organize, create, and express your ideas beautifully.",
+        "image": "https://i.ibb.co.com/rRGvLjjF/writing5.jpg",
+        "quantity": 6
+    },
+    {
+        "name": "Multi-Purpose Paper Set",
+        "brand": "Whispering Pages",
+        "price": 250,
+        "category": "Office Supplies",
+        "description": "Eloquent JavaScript Discover premium stationery that inspires creativity and productivity. From elegant notebooks and quality pens to vibrant art supplies and planning essentials, we bring the tools you need to organize, create, and express your ideas beautifully.",
+        "image": "https://i.ibb.co.com/GvS0zFfp/office-supplies6.jpg",
+        "quantity": 17
+    },
+    {
+        "name": "Watercolor Paint Set",
+        "brand": "Shelf Worth",
+        "price": 230,
+        "category": "Art Supplies",
+        "description": "Eloquent JavaScript Discover premium stationery that inspires creativity and productivity. From elegant notebooks and quality pens to vibrant art supplies and planning essentials, we bring the tools you need to organize, create, and express your ideas beautifully.",
+        "image": "https://i.ibb.co.com/JR0T2DLZ/art-supplies1.jpg",
+        "quantity": 23
+    }
+]

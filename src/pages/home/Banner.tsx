@@ -1,51 +1,43 @@
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Autoplay, Pagination, Navigation, A11y } from 'swiper/modules';
-import book1 from '../../assets/images/book1.png';
-import book2 from '../../assets/images/book2.png';
-import book3 from '../../assets/images/book3.png';
-import book4 from '../../assets/images/book4.png';
-import book5 from '../../assets/images/book5.png';
-import book6 from '../../assets/images/book6.png';
-import book7 from '../../assets/images/book7.png';
-import book8 from '../../assets/images/book8.png';
+import writing from '../../assets/images/writing.jpg';
+import officeSupplies from '../../assets/images/office-supplies.jpg';
+import artSupplies from '../../assets/images/art-supplies.jpg';
+import educational from '../../assets/images/educational.jpg';
+import technology from '../../assets/images/technology.jpg';
+import technology1 from '../../assets/images/technology1.jpg';
 import '../../styles/Home.css';
+import CustomButton from '../../components/shared/CustomButton';
+import { Link } from 'react-router-dom';
+
+const booksData = [
+  {
+    id: 1,
+    image: writing,
+  },
+  {
+    id: 2,
+    image: officeSupplies,
+  },
+  {
+    id: 3,
+    image: artSupplies,
+  },
+  {
+    id: 4,
+    image: educational,
+  },
+  {
+    id: 5,
+    image: technology,
+  },
+  {
+    id: 6,
+    image: technology1,
+  },
+];
 
 const Banner = () => {
-  const booksData = [
-    {
-      _id: 1,
-      image: book1,
-    },
-    {
-      _id: 2,
-      image: book2,
-    },
-    {
-      _id: 3,
-      image: book3,
-    },
-    {
-      _id: 4,
-      image: book4,
-    },
-    {
-      _id: 5,
-      image: book5,
-    },
-    {
-      _id: 6,
-      image: book6,
-    },
-    {
-      _id: 7,
-      image: book7,
-    },
-    {
-      _id: 8,
-      image: book8,
-    },
-  ];
-
   return (
     <section className="lg:flex lg:flex-row-reverse items-center justify-center lg:my-16">
       <Swiper
@@ -72,8 +64,8 @@ const Banner = () => {
         }}
       >
         {booksData?.map((book) => (
-          <SwiperSlide key={book._id}>
-            <img src={book.image} className="mb-16 mx-auto w-80 p-5" />
+          <SwiperSlide key={book.id}>
+            <img src={book.image} className="mb-16 mx-auto rounded-3xl p-5" />
           </SwiperSlide>
         ))}
       </Swiper>
@@ -89,9 +81,9 @@ const Banner = () => {
           planning essentials, we bring the tools you need to organize, create,
           and express your ideas beautifully.
         </p>
-        <button className="bg-[#3F90FC] text-white px-8 py-2 rounded-sm">
-          Buy Now
-        </button>
+        <Link to="/products">
+          <CustomButton>Buy Now</CustomButton>
+        </Link>
       </div>
     </section>
   );

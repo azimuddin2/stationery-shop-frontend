@@ -59,9 +59,9 @@ const PaymentHistory = () => {
       key: 'status',
       render: (status: string) => {
         const color =
-          status === 'pending'
+          status === 'Pending'
             ? 'orange'
-            : status === 'completed'
+            : status === 'Completed'
               ? 'green'
               : 'blue';
         return <Tag color={color}>{status}</Tag>;
