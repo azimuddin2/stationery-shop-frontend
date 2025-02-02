@@ -5,7 +5,6 @@ import officeSupplies from '../../assets/images/office-supplies.jpg';
 import artSupplies from '../../assets/images/art-supplies.jpg';
 import educational from '../../assets/images/educational.jpg';
 import technology from '../../assets/images/technology.jpg';
-import technology1 from '../../assets/images/technology1.jpg';
 import '../../styles/Home.css';
 import CustomButton from '../../components/shared/CustomButton';
 import { Link } from 'react-router-dom';
@@ -31,15 +30,11 @@ const booksData = [
     id: 5,
     image: technology,
   },
-  {
-    id: 6,
-    image: technology1,
-  },
 ];
 
 const Banner = () => {
   return (
-    <section className="lg:flex lg:flex-row-reverse items-center justify-center lg:my-16">
+    <section className="lg:flex lg:flex-row-reverse items-center justify-center lg:my-16 gap-5">
       <Swiper
         className="mySwiper flex-1"
         style={{
@@ -65,7 +60,10 @@ const Banner = () => {
       >
         {booksData?.map((book) => (
           <SwiperSlide key={book.id}>
-            <img src={book.image} className="mb-16 mx-auto rounded-3xl p-5" />
+            <img
+              src={book.image}
+              className="mb-5 w-full mx-auto rounded-3xl p-5"
+            />
           </SwiperSlide>
         ))}
       </Swiper>

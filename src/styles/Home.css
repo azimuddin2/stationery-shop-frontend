@@ -1,6 +1,6 @@
 .swiper-button-prev {
-    left: 18% !important;
-    border: 1px solid #3F90FC;
+    left: 0% !important;
+    border: 2px solid #3F90FC;
     border-radius: 100px;
     width: 40px;
     height: 40px;
@@ -8,8 +8,8 @@
 }
 
 .swiper-button-next {
-    left: 75% !important;
-    border: 1px solid #3F90FC;
+    left: 93% !important;
+    border: 2px solid #3F90FC;
     width: 40px;
     height: 40px;
     border-radius: 100px;
