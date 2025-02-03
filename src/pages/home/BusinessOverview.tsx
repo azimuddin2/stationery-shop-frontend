@@ -31,7 +31,7 @@ const BusinessOverview = () => {
               {inView && <CountUp start={1} end={100} duration={2} delay={0} />}
               K
             </h2>
-            <h3 className="text-xl text-primary font-medium">Our Products</h3>
+            <h3 className="text-xl text-accent font-medium">Our Products</h3>
           </div>
         </div>
 
@@ -46,9 +46,7 @@ const BusinessOverview = () => {
               {inView && <CountUp start={1} end={300} duration={2} delay={0} />}
               K
             </h2>
-            <h3 className="text-xl text-primary font-medium">
-              Happy Customers
-            </h3>
+            <h3 className="text-xl text-accent font-medium">Happy Customers</h3>
           </div>
         </div>
 
@@ -59,7 +57,7 @@ const BusinessOverview = () => {
               {inView && <CountUp start={1} end={200} duration={2} delay={0} />}
               M
             </h2>
-            <h3 className="text-xl text-primary font-medium">Annual Revenue</h3>
+            <h3 className="text-xl text-accent font-medium">Annual Revenue</h3>
           </div>
         </div>
 
@@ -73,7 +71,7 @@ const BusinessOverview = () => {
             <h2 className="text-3xl text-secondary">
               {inView && <CountUp start={1} end={44} duration={2} delay={0} />}K
             </h2>
-            <h3 className="text-xl text-primary font-medium">
+            <h3 className="text-xl text-accent font-medium">
               Client Feedbacks
             </h3>
           </div>

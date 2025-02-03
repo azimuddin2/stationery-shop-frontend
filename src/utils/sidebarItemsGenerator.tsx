@@ -6,7 +6,12 @@ export const sidebarItemsGenerator = (items: TUserPath[], role: string) => {
     if (item.path && item.name) {
       acc.push({
         key: item.name,
-        label: <NavLink to={`/${role}/${item.path}`}>{item.name}</NavLink>,
+        label: (
+          <NavLink to={`/${role}/${item.path}`} className="flex items-center">
+            <span className="text-lg mr-1">{item.icon}</span>
+            <span style={{ fontSize: '16px' }}>{item.name}</span>
+          </NavLink>
+        ),
       });
     }
 

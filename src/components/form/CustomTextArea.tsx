@@ -19,6 +19,7 @@ const CustomTextArea = ({ name, label }: TTextAreaProps) => {
             id={name}
             style={{ width: '100%' }}
             size="large"
+            rows={4}
           />
           {error && (
             <div
