@@ -10,20 +10,24 @@ const FeaturedProducts = () => {
 
   return (
     <section className="my-12">
-      <h1 className="text-center text-3xl my-5">All Products</h1>
+      <div className="text-center mb-8 lg:w-2xl mx-auto">
+        <h2 className="text-3xl mb-2 text-secondary">Our Products</h2>
+        <p className="text-accent">
+          Our stationery shop offers high-quality notebooks, pens, pencils, and
+          more—perfect for students, professionals, and artists.
+        </p>
+      </div>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
         {productsCollection?.map((item) => (
           <ProductCard key={item._id} item={item} />
         ))}
       </div>
-      <div className="mt-10 text-center">
-        <Link to="/products">
-          <button className="bg-[#181818] px-8 rounded-sm py-1 text-white flex items-center justify-center">
-            <span>View All</span>
-            <IoArrowForwardCircleOutline className="text-xl" />
-          </button>
-        </Link>
-      </div>
+      <Link to="/products" className="mt-10 flex justify-center items-center">
+        <button className="bg-[#181818] hover:bg-[#676767] cursor-pointer px-12 rounded-sm py-1 text-white flex items-center justify-center">
+          <span>View All</span>
+          <IoArrowForwardCircleOutline className="text-xl ml-1" />
+        </button>
+      </Link>
     </section>
   );
 };

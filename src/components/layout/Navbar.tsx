@@ -34,10 +34,10 @@ const Navbar = () => {
           <CustomLink to="/">Home</CustomLink>
         </li>
         <li>
-          <Link to="/products">Products</Link>
+          <CustomLink to="/products">Products</CustomLink>
         </li>
         <li>
-          <Link to="/events">About</Link>
+          <CustomLink to="/events">About</CustomLink>
         </li>
         <li>
           <Link to="/admin/dashboard">Dashboard</Link>

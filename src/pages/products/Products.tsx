@@ -55,8 +55,14 @@ const Products = () => {
   }
 
   return (
-    <section className="lg:max-w-7xl lg:mx-auto px-5">
-      <h2 className="text-3xl text-center mb-10">All Products</h2>
+    <section className="lg:max-w-7xl lg:mx-auto px-5 my-12">
+      <div className="text-center mb-10 lg:w-2xl mx-auto">
+        <h2 className="text-3xl mb-2 text-secondary">Our Products</h2>
+        <p className="text-accent">
+          Our stationery shop offers high-quality notebooks, pens, pencils, and
+          more—perfect for students, professionals, and artists.
+        </p>
+      </div>
 
       {/* Search & Category Filter */}
       <div className="flex justify-center flex-wrap gap-4 mb-5">
@@ -67,7 +73,7 @@ const Products = () => {
           onChange={(e) => setSearchTerm(e.target.value)}
           allowClear
           style={{ width: '600px' }}
-          // size="large"
+          size="large"
         />
         <Select
           placeholder="Select Category"
@@ -76,12 +82,12 @@ const Products = () => {
           onChange={handleCategoryChange}
           options={categoryOptions}
           allowClear
-          // size="large"
+          size="large"
         />
       </div>
 
       {/* Product List */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 mt-8 mb-12">
         {productsData?.data?.map((item) => (
           <ProductCard key={item._id} item={item} />
         ))}
@@ -90,6 +96,7 @@ const Products = () => {
       {/* Pagination */}
       <Pagination
         style={{ marginTop: '20px', textAlign: 'right' }}
+        align="end"
         current={page}
         onChange={(value) => setPage(value)}
         pageSize={metaData?.limit}

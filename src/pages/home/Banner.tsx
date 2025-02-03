@@ -8,6 +8,8 @@ import technology from '../../assets/images/technology.jpg';
 import '../../styles/Home.css';
 import CustomButton from '../../components/shared/CustomButton';
 import { Link } from 'react-router-dom';
+import { IoArrowForwardCircleOutline } from 'react-icons/io5';
+import { Fade } from 'react-awesome-reveal';
 
 const booksData = [
   {
@@ -34,7 +36,7 @@ const booksData = [
 
 const Banner = () => {
   return (
-    <section className="lg:flex lg:flex-row-reverse items-center justify-center lg:my-16 gap-5">
+    <section className="lg:flex lg:flex-row-reverse items-center justify-center lg:my-12 gap-5">
       <Swiper
         className="mySwiper flex-1"
         style={{
@@ -69,18 +71,23 @@ const Banner = () => {
       </Swiper>
 
       <div className="flex-1">
-        <h1 className="text-primary text-5xl">Sale up to 30% off</h1>
-        <h2 className="text-3xl text-secondary font-bold">
-          Elevate Your Desk with Premium Stationery
+        <Fade cascade damping={1e-1} className="text-primary text-5xl">
+          Sale up to 30% off.
+        </Fade>
+        <h2 className="text-3xl text-secondary font-bold my-3">
+          Elevate Your Desk with Premium Stationery Shop
         </h2>
-        <p className="text-accent">
-          Discover premium stationery that inspires creativity and productivity.
-          From elegant notebooks and quality pens to vibrant art supplies and
-          planning essentials, we bring the tools you need to organize, create,
-          and express your ideas beautifully.
+        <p className="text-accent mb-5">
+          Our stationery shop offers a wide range of high-quality products,
+          including notebooks, pens, pencils, sticky notes, highlighters, and
+          more. Whether you're a student, professional, or artist, we have
+          everything you need to stay organized and creative.
         </p>
         <Link to="/products">
-          <CustomButton>Buy Now</CustomButton>
+          <CustomButton>
+            <span>Buy Now</span>
+            <IoArrowForwardCircleOutline className="text-xl ml-1" />
+          </CustomButton>
         </Link>
       </div>
     </section>
