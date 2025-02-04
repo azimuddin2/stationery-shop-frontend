@@ -4,7 +4,14 @@ import {
   useDeleteProductMutation,
   useGetAllProductQuery,
 } from '../../../redux/features/product/productApi';
-import { Button, Pagination, Table, TableColumnsType, TableProps } from 'antd';
+import {
+  Button,
+  Card,
+  Pagination,
+  Table,
+  TableColumnsType,
+  TableProps,
+} from 'antd';
 import { TProduct } from '../../../types/product.type';
 import UpdateProductModal from './UpdateProductModal';
 import Swal from 'sweetalert2';
@@ -17,7 +24,7 @@ type TTableData = Pick<
 const ManageProducts = () => {
   const [params, setParams] = useState<TQueryParam[]>([]);
   const [page, setPage] = useState(1);
-  const [limit, setLimit] = useState(4);
+  const [limit, setLimit] = useState(6);
   const {
     data: productsData,
     isFetching,
@@ -110,14 +117,16 @@ const ManageProducts = () => {
       title: 'Price',
       key: 'price',
       dataIndex: `price`,
+      render: (text: number) => `$${text.toFixed(2)}`,
     },
     {
       key: 'description',
       dataIndex: 'desc',
     },
     {
+      title: 'Quantity',
       key: 'quantity',
-      dataIndex: 'desc',
+      dataIndex: 'quantity',
     },
     {
       title: 'Action',
@@ -153,10 +162,12 @@ const ManageProducts = () => {
   };
 
   return (
-    <div>
-      <h2 style={{ marginBottom: '12px' }}>Academic Semesters</h2>
-
-      <>
+    <div className="lg:m-8">
+      <Card
+        title="Manage Products"
+        bordered={false}
+        style={{ margin: '20px auto', paddingBottom: '30px' }}
+      >
         <Table
           loading={isFetching}
           columns={columns}
@@ -165,15 +176,15 @@ const ManageProducts = () => {
           pagination={false}
           scroll={{ x: 'max-content' }}
         />
-        <Pagination
-          style={{ margin: '20px' }}
-          align="end"
-          current={page}
-          onChange={(value) => setPage(value)}
-          pageSize={metaData?.limit}
-          total={metaData?.totalDoc}
-        />
-      </>
+      </Card>
+      <Pagination
+        style={{ margin: '20px' }}
+        align="end"
+        current={page}
+        onChange={(value) => setPage(value)}
+        pageSize={metaData?.limit}
+        total={metaData?.totalDoc}
+      />
     </div>
   );
 };

@@ -78,10 +78,8 @@ const AddReview = () => {
       <div className="px-5 py-8 lg:p-12 w-11/12 lg:w-xl mx-auto bg-[#ffffff] rounded">
         <CustomForm onSubmit={onSubmit} resolver={zodResolver(reviewSchema)}>
           <div className="text-center mb-6">
-            <h2 className="text-xl uppercase font-medium mb-2">
-              Give a Review!
-            </h2>
-            <div className="flex gap-1">
+            <h2 className="text-xl font-medium mb-2">Give a Review!</h2>
+            <div className="flex gap-1 justify-center items-center mt-6">
               {Array.from({ length: totalStars }, (_, index) => (
                 <Star
                   key={index}

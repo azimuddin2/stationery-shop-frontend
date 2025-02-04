@@ -1,10 +1,14 @@
 import { Button, Card, Table, TableColumnsType, Tag } from 'antd';
-import { useGetOrdersByEmailQuery } from '../../../redux/features/order/orderApi';
+import {
+  useDeleteOrderMutation,
+  useGetOrdersByEmailQuery,
+} from '../../../redux/features/order/orderApi';
 import { TOrder } from '../../../types/order.type';
 import { useAppSelector } from '../../../redux/hooks';
 import { selectCurrentUser } from '../../../redux/features/auth/authSlice';
 import { useEffect, useState } from 'react';
 import PaymentModal from './PaymentModal';
+import Swal from 'sweetalert2';
 
 type TTableData = Pick<
   TOrder,
@@ -39,6 +43,31 @@ const OrdersList = () => {
     }),
   );
 
+  const [deleteOrder] = useDeleteOrderMutation();
+
+  const handleDelete = async (item: TOrder) => {
+    console.log(item);
+    Swal.fire({
+      title: 'Are you sure?',
+      text: `Email - ${item.email}`,
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: '#3F90FC',
+      cancelButtonColor: '#d33',
+      confirmButtonText: 'Yes, delete it!',
+    }).then(async (result) => {
+      if (result.isConfirmed) {
+        try {
+          await deleteOrder(item._id).unwrap();
+          Swal.fire('Deleted!', 'Your order has been deleted.', 'success');
+          refetch();
+        } catch (error) {
+          Swal.fire('Error!', 'Something went wrong.', 'error');
+        }
+      }
+    });
+  };
+
   const columns: TableColumnsType<TTableData> = [
     {
       title: 'Email',
@@ -60,8 +89,8 @@ const OrdersList = () => {
           status === 'Pending'
             ? 'orange'
             : status === 'Shipped'
-              ? 'blue'
-              : 'green';
+              ? 'green'
+              : 'blue';
         return <Tag color={color}>{status}</Tag>;
       },
     },
@@ -79,7 +108,13 @@ const OrdersList = () => {
             ) : (
               <>
                 <PaymentModal paymentInfo={item} refetch={refetch} />
-                <Button danger>Delete</Button>
+                <Button
+                  danger
+                  style={{ marginLeft: '10px' }}
+                  onClick={() => handleDelete(item)}
+                >
+                  Cancel
+                </Button>
               </>
             )}
           </div>
