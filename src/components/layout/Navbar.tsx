@@ -8,8 +8,8 @@ import logo from '../../assets/images/dark-logo.png';
 import { useAppDispatch, useAppSelector } from '../../redux/hooks';
 import { logout, selectCurrentUser } from '../../redux/features/auth/authSlice';
 import { selectCartItems } from '../../redux/features/cart/cartSlice';
-import { FaShoppingCart } from 'react-icons/fa';
 import { MdOutlineShoppingCart } from 'react-icons/md';
+import { CgLogIn } from 'react-icons/cg';
 
 const Navbar = () => {
   const [open, setOpen] = useState(false);
@@ -39,11 +39,17 @@ const Navbar = () => {
         <li>
           <CustomLink to="/events">About</CustomLink>
         </li>
-        <li>
-          <Link to="/admin/dashboard">Dashboard</Link>
-        </li>
+        {user?.email && (
+          <li>
+            {user.role === 'admin' ? (
+              <Link to="/admin/dashboard">Dashboard</Link>
+            ) : (
+              <Link to="/user/dashboard">Dashboard</Link>
+            )}
+          </li>
+        )}
         <li
-          className="relative cursor-pointer mr-5"
+          className="relative cursor-pointer mr-5 lg:block hidden"
           onClick={() => navigate('/cart')}
         >
           <MdOutlineShoppingCart size={25} className="text-secondary" />
@@ -56,15 +62,28 @@ const Navbar = () => {
         <li>
           {user?.email ? (
             <button onClick={handleLogout} className="register-btn">
-              Logout
+              <span className="mr-1">Logout</span> <CgLogIn size={20} />
             </button>
           ) : (
             <Link to="/login">
-              <button className="register-btn">Login</button>
+              <button className="register-btn">
+                <span className="mr-1">Login</span> <CgLogIn size={20} />
+              </button>
             </Link>
           )}
         </li>
       </ul>
+      <div
+        className="relative cursor-pointer lg:hidden mr-[-90px]"
+        onClick={() => navigate('/cart')}
+      >
+        <MdOutlineShoppingCart size={25} className="text-secondary" />
+        {cartCount > 0 && (
+          <span className="absolute -top-2 -right-2 bg-[#3F90FC] text-white text-xs font-bold rounded-full w-5 h-5 flex items-center justify-center">
+            {cartCount}
+          </span>
+        )}
+      </div>
       <div id="mobile" onClick={() => setOpen(!open)}>
         {open ? (
           <IoClose className="nav-icon" />

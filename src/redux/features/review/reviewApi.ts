@@ -1,3 +1,5 @@
+import { TResponseRedux } from '../../../types';
+import { TReview } from '../../../types/review.type';
 import { baseApi } from '../../api/baseApi';
 
 const reviewApi = baseApi.injectEndpoints({
@@ -14,6 +16,11 @@ const reviewApi = baseApi.injectEndpoints({
         url: '/reviews',
         method: 'GET',
       }),
+      transformResponse: (response: TResponseRedux<TReview[]>) => {
+        return {
+          data: response.data,
+        };
+      },
     }),
   }),
 });

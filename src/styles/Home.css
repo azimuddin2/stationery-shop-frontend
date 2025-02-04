@@ -32,10 +32,10 @@
 /* responsive mobile device */
 @media screen and (max-width: 576px) {
     .swiper-button-prev {
-        left: 10% !important;
+        left: 0% !important;
     }
 
     .swiper-button-next {
-        left: 24% !important;
+        left: 88% !important;
     }
 }

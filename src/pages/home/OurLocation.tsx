@@ -4,10 +4,12 @@ import { BsFillClockFill } from 'react-icons/bs';
 
 const OurLocation = () => {
   return (
-    <section className="my-12 lg:my-16">
+    <section className="my-12">
       <div className="text-center mb-8 lg:w-2xl mx-auto">
-        <h2 className="text-3xl mb-2 text-secondary">Our Location</h2>
-        <p className="text-accent text-sm">
+        <h2 className="font-medium text-2xl lg:text-3xl leading-snug text-secondary">
+          Our Location
+        </h2>
+        <p className="text-accent text-sm mt-2">
           Our store is conveniently located in Dhanmondi 17, Dhaka -1200,
           Bangladesh offering easy access to high-quality stationery products
           for all your needs.

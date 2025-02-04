@@ -5,13 +5,18 @@ import officeSupplies from '../../assets/images/office-supplies.jpg';
 import artSupplies from '../../assets/images/art-supplies.jpg';
 import educational from '../../assets/images/educational.jpg';
 import technology from '../../assets/images/technology.jpg';
-import '../../styles/Home.css';
 import CustomButton from '../../components/shared/CustomButton';
 import { Link } from 'react-router-dom';
 import { IoArrowForwardCircleOutline } from 'react-icons/io5';
 import { Fade } from 'react-awesome-reveal';
+import '../../styles/Home.css';
 
-const booksData = [
+type TBookData = {
+  id: number;
+  image: string;
+};
+
+const booksData: TBookData[] = [
   {
     id: 1,
     image: writing,
@@ -39,16 +44,17 @@ const Banner = () => {
     <section className="lg:flex lg:flex-row-reverse items-center justify-center lg:my-12 gap-5">
       <Swiper
         className="mySwiper flex-1"
-        style={{
-          '--swiper-pagination-color': '#3F90FC',
-          '--swiper-pagination-bullet-inactive-color': '#999999',
-          '--swiper-pagination-bullet-inactive-opacity': '1',
-          '--swiper-pagination-bullet-size': '12px',
-          '--swiper-pagination-bullet-horizontal-gap': '3px',
-
-          '--swiper-navigation-color': '#3F90FC',
-          '--swiper-navigation-size': '18px',
-        }}
+        style={
+          {
+            '--swiper-pagination-color': '#3F90FC',
+            '--swiper-pagination-bullet-inactive-color': '#999999',
+            '--swiper-pagination-bullet-inactive-opacity': '1',
+            '--swiper-pagination-bullet-size': '12px',
+            '--swiper-pagination-bullet-horizontal-gap': '3px',
+            '--swiper-navigation-color': '#3F90FC',
+            '--swiper-navigation-size': '18px',
+          } as React.CSSProperties
+        }
         modules={[A11y, Pagination, Navigation, Autoplay]}
         spaceBetween={18}
         autoplay={{
@@ -71,7 +77,11 @@ const Banner = () => {
       </Swiper>
 
       <div className="flex-1">
-        <Fade cascade damping={1e-1} className="text-primary text-5xl">
+        <Fade
+          cascade
+          damping={1e-1}
+          className="text-primary text-3xl lg:text-5xl"
+        >
           Sale up to 30% off.
         </Fade>
         <h2 className="text-3xl text-secondary font-bold my-3">

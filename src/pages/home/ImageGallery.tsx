@@ -30,7 +30,7 @@ const ImageGallery = () => {
 
   return (
     <section className="my-12">
-      <h2 className="text-2xl font-bold mb-4 text-center text-secondary">
+      <h2 className="font-medium text-2xl lg:text-3xl leading-snug text-secondary text-center mb-6">
         Image Gallery
       </h2>
       <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-2">

@@ -11,8 +11,10 @@ const FeaturedProducts = () => {
   return (
     <section className="my-12">
       <div className="text-center mb-8 lg:w-2xl mx-auto">
-        <h2 className="text-3xl mb-2 text-secondary">Our Products</h2>
-        <p className="text-accent">
+        <h2 className="font-medium text-2xl lg:text-3xl leading-snug text-secondary">
+          Our Products
+        </h2>
+        <p className="text-accent mt-2">
           Our stationery shop offers high-quality notebooks, pens, pencils, and
           more—perfect for students, professionals, and artists.
         </p>

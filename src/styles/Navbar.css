@@ -15,7 +15,7 @@
 }
 
 .header a {
-    color: #1C2B35;
+    color: #676767;
     font-size: 16px;
     font-weight: 400;
     text-decoration: none;
@@ -30,6 +30,9 @@
 }
 
 .register-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     background-color: #3F90FC;
     color: #fff !important;
     padding: 8px 20px !important;
