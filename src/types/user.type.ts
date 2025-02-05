@@ -1,12 +1,13 @@
-export type TUser = {
+export type TRegisterUser = {
   name: string;
   email: string;
+  password?: string;
   role: string;
-  image?: string;
-  address?: string;
-  isBlocked: boolean;
+  status: string;
+  isDeleted: boolean;
   _id: string;
   createdAt: string;
   updatedAt: string;
-  __v: number;
+  address?: string;
+  image?: string;
 };

@@ -57,8 +57,20 @@ const ManageOrders = () => {
 
   const metaData = ordersData?.meta;
 
+  const tableData = ordersData?.data?.map(
+    ({ _id, email, totalPrice, status, paid, transactionId }) => ({
+      key: _id,
+      _id,
+      email,
+      totalPrice,
+      status,
+      paid,
+      transactionId,
+    }),
+  );
+
   const handleStatusUpdate: SubmitHandler<FieldValues> = async (data) => {
-    const toastId = toast.loading('Creating...');
+    const toastId = toast.loading('Updating...');
 
     const updateData = {
       id: orderId,
@@ -87,18 +99,6 @@ const ManageOrders = () => {
     items,
     onClick: handleStatusUpdate,
   };
-
-  const tableData = ordersData?.data?.map(
-    ({ _id, email, totalPrice, status, paid, transactionId }) => ({
-      key: _id,
-      _id,
-      email,
-      totalPrice,
-      status,
-      paid,
-      transactionId,
-    }),
-  );
 
   const handleDelete = async (item: TOrder) => {
     console.log(item);

@@ -5,7 +5,7 @@ import { zodResolver } from '@hookform/resolvers/zod';
 import { registerFormSchema } from '../../schemas/auth.schema';
 import { toast } from 'sonner';
 import { Link, useNavigate } from 'react-router-dom';
-import { useRegisterMutation } from '../../redux/features/auth/authApi';
+import { useRegisterMutation } from '../../redux/features/user/userApi';
 import { FieldValues, SubmitHandler } from 'react-hook-form';
 
 const Register = () => {
@@ -14,7 +14,7 @@ const Register = () => {
   const [register] = useRegisterMutation();
 
   const onSubmit: SubmitHandler<FieldValues> = async (data) => {
-    const toastId = toast.loading('Logging in');
+    const toastId = toast.loading('Register in');
 
     try {
       const userInfo = {

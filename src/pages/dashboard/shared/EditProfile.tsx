@@ -8,7 +8,7 @@ import { zodResolver } from '@hookform/resolvers/zod';
 import { updateUserSchema } from '../../../schemas/auth.schema';
 import { FieldValues, SubmitHandler } from 'react-hook-form';
 import { toast } from 'sonner';
-import { useUpdateUserMutation } from '../../../redux/features/auth/authApi';
+import { useUpdateUserMutation } from '../../../redux/features/user/userApi';
 import { TResponse } from '../../../types';
 import { TUser } from '../../../types/user.type';
 

@@ -14,7 +14,7 @@ const ProductCard = ({ item }: Partial<TProduct | any>) => {
         <p className="font-medium text-lg mb-3">${price}</p>
         <button
           onClick={() => navigate(`/products/${item._id}`)}
-          className="bg-[#3F90FC] hover:bg-[#1677ff] text-white cursor-pointer px-8 py-2 rounded-sm flex justify-center items-center"
+          className="bg-[#3F90FC] hover:bg-[#1677ff] text-white cursor-pointer px-6 py-1 rounded-sm flex justify-center items-center"
         >
           <MdOutlineShoppingCart size={20} className="mr-1" />
           <span>Buy Now</span>

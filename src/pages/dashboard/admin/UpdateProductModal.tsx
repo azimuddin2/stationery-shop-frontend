@@ -32,7 +32,7 @@ const UpdateProductModal = ({
   };
 
   const onSubmit: SubmitHandler<FieldValues> = async (data) => {
-    const toastId = toast.loading('Creating...');
+    const toastId = toast.loading('Updating...');
 
     try {
       const productData = {
