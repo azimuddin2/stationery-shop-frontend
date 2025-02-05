@@ -12,23 +12,22 @@ const ReviewCard = ({ item }: Partial<TReview | any>) => {
       <div className="flex items-center justify-between">
         <div className="md:flex items-center">
           {image === null ? (
-            <div>
-              <Avatar
-                style={{
-                  background: '#3F90FC',
-                  fontSize: '24px',
-                  width: '44px',
-                  height: '44px',
-                }}
-              >
-                {name.slice(0, 1)}
-              </Avatar>
-            </div>
+            <Avatar
+              style={{
+                background: '#3F90FC',
+                fontSize: '24px',
+                width: '44px',
+                height: '44px',
+              }}
+            >
+              {name.slice(0, 1)}
+            </Avatar>
           ) : (
-            <div className="avatar">
-              <div className="w-12 rounded-full ring ring-secondary ring-offset-base-100 ring-offset-2">
-                <img src={image} alt={name} />
-              </div>
+            <div
+              style={{ width: '44px', height: '44px' }}
+              className="rounded-full"
+            >
+              <img src={image} alt={name} className="w-full" />
             </div>
           )}
           <div className="ml-5 mt-1 lg:mt-0">

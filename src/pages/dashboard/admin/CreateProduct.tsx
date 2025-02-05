@@ -81,7 +81,7 @@ const CreateProduct = () => {
 
             <CustomInput type="number" name="quantity" label="Quantity" />
 
-            <CustomUpload type="file" name="image" label="Upload Picture" />
+            <CustomUpload name="image" />
 
             <Button type="primary" htmlType="submit">
               Submit

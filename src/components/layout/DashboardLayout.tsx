@@ -1,9 +1,12 @@
 import { useState } from 'react';
-import { MenuOutlined } from '@ant-design/icons';
-import { Layout, Button, Grid } from 'antd';
+import { LogoutOutlined, MenuOutlined } from '@ant-design/icons';
+import { Layout, Button, Grid, Avatar, Dropdown, Menu } from 'antd';
 import Sidebar from './Sidebar';
-import { Outlet } from 'react-router-dom';
-import { FaUserCircle } from 'react-icons/fa';
+import { Link, Outlet } from 'react-router-dom';
+import { FaUserEdit } from 'react-icons/fa';
+import { useAppDispatch, useAppSelector } from '../../redux/hooks';
+import { logout, selectCurrentUser } from '../../redux/features/auth/authSlice';
+import { MdOutlineNotificationsActive } from 'react-icons/md';
 
 export type BreakpointType = {
   isMobile: boolean;
@@ -19,6 +22,55 @@ const { useBreakpoint } = Grid;
 const DashboardLayout = () => {
   const [collapsed, setCollapsed] = useState<boolean>(false);
   const screens = useBreakpoint() as BreakpointType;
+  const user = useAppSelector(selectCurrentUser);
+  const dispatch = useAppDispatch();
+
+  const handleLogout = () => {
+    dispatch(logout());
+  };
+
+  const menu = (
+    <Menu
+      style={{
+        width: '300px',
+        background: '#001529',
+        marginTop: '12px',
+        padding: '25px 20px',
+      }}
+    >
+      <div className="text-white text-center mb-5">
+        <Avatar
+          style={{
+            background: '#3F90FC',
+            fontSize: '28px',
+            width: '50px',
+            height: '50px',
+            cursor: 'pointer',
+          }}
+        >
+          {user?.name.slice(0, 1)}
+        </Avatar>
+        <h2 className="mt-3 text-lg font-medium">{user?.name}</h2>
+        <p>{user?.email}</p>
+      </div>
+      <Menu.Item
+        key="1"
+        icon={<FaUserEdit size={20} />}
+        style={{ background: '#3F90FC', color: 'white' }}
+      >
+        <Link to={`/${user?.role}/edit-profile`}>Edit Profile</Link>
+      </Menu.Item>
+      <Menu.Divider />
+      <Menu.Item
+        key="3"
+        icon={<LogoutOutlined />}
+        style={{ background: '#FF4D4F', color: 'white' }}
+        onClick={handleLogout}
+      >
+        Logout
+      </Menu.Item>
+    </Menu>
+  );
 
   return (
     <Layout>
@@ -50,8 +102,30 @@ const DashboardLayout = () => {
               />
             )}
           </div>
-          <div>
-            <FaUserCircle className="text-3xl text-white" />
+          <div className="flex items-center justify-center">
+            <div className="relative cursor-pointer mr-5 lg:block hidden">
+              <MdOutlineNotificationsActive size={24} className="text-white" />
+              <span className="absolute -top-2 -right-2 bg-[#FF4D4F] text-white text-xs font-bold rounded-full w-5 h-5 flex items-center justify-center">
+                {0}
+              </span>
+            </div>
+            <Dropdown
+              overlay={menu}
+              trigger={['click']}
+              placement="bottomRight"
+            >
+              <Avatar
+                style={{
+                  background: '#3F90FC',
+                  fontSize: '20px',
+                  width: '36px',
+                  height: '36px',
+                  cursor: 'pointer',
+                }}
+              >
+                {user?.name.slice(0, 1)}
+              </Avatar>
+            </Dropdown>
           </div>
         </Header>
         <Content style={{ margin: '24px 16px 0' }}>

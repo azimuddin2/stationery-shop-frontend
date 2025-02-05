@@ -16,7 +16,16 @@ const authApi = baseApi.injectEndpoints({
         body: userInfo,
       }),
     }),
+    updateUser: builder.mutation({
+      query: (args) => ({
+        url: `/users/${args.email}`,
+        method: 'PATCH',
+        body: args.data,
+      }),
+      invalidatesTags: ['user'] as any,
+    }),
   }),
 });
 
-export const { useLoginMutation, useRegisterMutation } = authApi;
+export const { useLoginMutation, useRegisterMutation, useUpdateUserMutation } =
+  authApi;

@@ -5,6 +5,7 @@ import AdminDashboard from '../pages/dashboard/admin/AdminDashboard';
 import CreateProduct from '../pages/dashboard/admin/CreateProduct';
 import ManageProducts from '../pages/dashboard/admin/ManageProducts';
 import ManageOrders from '../pages/dashboard/admin/ManageOrders';
+import EditProfile from '../pages/dashboard/shared/EditProfile';
 
 export const adminPaths = [
   {
@@ -33,8 +34,8 @@ export const adminPaths = [
   },
   {
     name: 'Edit Profile',
-    path: 'manage-order',
+    path: 'edit-profile',
     icon: <FaEdit />,
-    element: <ManageOrders />,
+    element: <EditProfile />,
   },
 ];

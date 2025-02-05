@@ -1,28 +1,40 @@
-import { Form, Input } from 'antd';
+import { Form } from 'antd';
 import { Controller } from 'react-hook-form';
+import { BiImageAdd } from 'react-icons/bi'; // ✅ Import Image Upload Icon
 import { MdErrorOutline } from 'react-icons/md';
 
 type TUploadProps = {
-  type: string;
   name: string;
-  label?: string;
 };
 
-const CustomUpload = ({ type, name, label }: TUploadProps) => {
+const CustomUpload = ({ name }: TUploadProps) => {
   return (
     <Controller
       name={name}
-      render={({
-        field: { onChange, value, ...field },
-        fieldState: { error },
-      }) => (
-        <Form.Item label={label}>
-          <Input
-            type={type}
-            value={value?.fileName}
-            {...field}
-            onChange={(e) => onChange(e.target.files?.[0])}
-          />
+      render={({ field: { onChange }, fieldState: { error } }) => (
+        <Form.Item>
+          <label
+            style={{
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              gap: '8px',
+              padding: '20px 0px',
+              border: '1px dashed #3F90FC',
+              borderRadius: '8px',
+              cursor: 'pointer',
+              width: '100%',
+            }}
+          >
+            <BiImageAdd size={30} color="#3F90FC" />
+            <span className="text-accent font-medium">Upload Image</span>
+            <input
+              type="file"
+              accept="image/*"
+              onChange={(e) => onChange(e.target.files?.[0] || null)}
+              style={{ display: 'none' }}
+            />
+          </label>
           {error && (
             <div
               style={{

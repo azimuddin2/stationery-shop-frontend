@@ -7,6 +7,8 @@ import OrdersList from '../pages/dashboard/user/OrdersList';
 import PaymentHistory from '../pages/dashboard/user/PaymentHistory';
 import UserDashboard from '../pages/dashboard/user/UserDashboard';
 import AddReview from '../pages/dashboard/user/AddReview';
+import { FaEdit } from 'react-icons/fa';
+import EditProfile from '../pages/dashboard/shared/EditProfile';
 
 export const userPaths = [
   {
@@ -32,5 +34,11 @@ export const userPaths = [
     path: 'add-review',
     icon: <MdRateReview />,
     element: <AddReview />,
+  },
+  {
+    name: 'Edit Profile',
+    path: 'edit-profile',
+    icon: <FaEdit />,
+    element: <EditProfile />,
   },
 ];

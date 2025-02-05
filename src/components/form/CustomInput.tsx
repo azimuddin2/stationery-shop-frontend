@@ -6,9 +6,10 @@ type TInputProps = {
   type: string;
   name: string;
   label?: string;
+  disabled?: boolean;
 };
 
-const CustomInput = ({ type, name, label }: TInputProps) => {
+const CustomInput = ({ type, name, label, disabled }: TInputProps) => {
   return (
     <Controller
       name={name}
@@ -20,6 +21,7 @@ const CustomInput = ({ type, name, label }: TInputProps) => {
             id={name}
             style={{ width: '100%' }}
             size="large"
+            disabled={disabled}
           />
           {error && (
             <div
