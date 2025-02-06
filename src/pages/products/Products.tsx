@@ -4,6 +4,7 @@ import { TQueryParam } from '../../types';
 import ProductCard from '../../components/shared/ProductCard';
 import { Pagination, Select, Input } from 'antd';
 import { categoryOptions } from '../../constants/product';
+import Loading from '../../components/shared/Loading';
 
 const { Search } = Input;
 
@@ -51,7 +52,7 @@ const Products = () => {
   };
 
   if (isFetching) {
-    return <p>Loading...</p>;
+    return <Loading />;
   }
 
   return (

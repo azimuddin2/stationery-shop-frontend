@@ -37,14 +37,14 @@ const Navbar = () => {
           <CustomLink to="/products">Products</CustomLink>
         </li>
         <li>
-          <CustomLink to="/events">About</CustomLink>
+          <CustomLink to="/about-us">About</CustomLink>
         </li>
         {user?.email && (
           <li>
             {user.role === 'admin' ? (
               <Link to="/admin/dashboard">Dashboard</Link>
             ) : (
-              <Link to="/user/dashboard">Dashboard</Link>
+              <Link to="/user/order-view">Dashboard</Link>
             )}
           </li>
         )}

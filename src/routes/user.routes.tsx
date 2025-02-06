@@ -1,22 +1,15 @@
-import { MdDashboard, MdRateReview } from 'react-icons/md';
+import { MdRateReview } from 'react-icons/md';
 import {
   HiClipboardDocumentList,
   HiDocumentCurrencyDollar,
 } from 'react-icons/hi2';
 import OrdersList from '../pages/dashboard/user/OrdersList';
 import PaymentHistory from '../pages/dashboard/user/PaymentHistory';
-import UserDashboard from '../pages/dashboard/user/UserDashboard';
 import AddReview from '../pages/dashboard/user/AddReview';
 import { FaEdit } from 'react-icons/fa';
 import EditProfile from '../pages/dashboard/shared/EditProfile';
 
 export const userPaths = [
-  {
-    name: 'Dashboard',
-    path: 'dashboard',
-    icon: <MdDashboard />,
-    element: <UserDashboard />,
-  },
   {
     name: 'My Order',
     path: 'order-view',

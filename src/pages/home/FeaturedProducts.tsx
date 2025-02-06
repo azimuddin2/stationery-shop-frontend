@@ -2,11 +2,16 @@ import { Link } from 'react-router-dom';
 import ProductCard from '../../components/shared/ProductCard';
 import { useGetAllProductQuery } from '../../redux/features/product/productApi';
 import { IoArrowForwardCircleOutline } from 'react-icons/io5';
+import Loading from '../../components/shared/Loading';
 
 const FeaturedProducts = () => {
   const { data: productsData, isFetching } = useGetAllProductQuery([]);
 
   const productsCollection = productsData?.data?.slice(0, 6);
+
+  if (isFetching) {
+    return <Loading />;
+  }
 
   return (
     <section className="my-12">

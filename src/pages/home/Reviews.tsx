@@ -2,9 +2,14 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import { Autoplay, Pagination, Navigation, A11y } from 'swiper/modules';
 import { useGetAllReviewsQuery } from '../../redux/features/review/reviewApi';
 import ReviewCard from '../../components/shared/ReviewCard';
+import Loading from '../../components/shared/Loading';
 
 const Reviews = () => {
-  const { data: reviewsData } = useGetAllReviewsQuery([]);
+  const { data: reviewsData, isLoading } = useGetAllReviewsQuery([]);
+
+  if (isLoading) {
+    return <Loading />;
+  }
 
   return (
     <section className="my-12 max-w-screen-lg lg:mx-auto">

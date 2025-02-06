@@ -1,9 +1,10 @@
-import { Button, Spin } from 'antd';
+import { Button } from 'antd';
 import { useParams } from 'react-router-dom';
 import { useGetProductByIdQuery } from '../../redux/features/product/productApi';
 import { useAppDispatch } from '../../redux/hooks';
 import { addToCart } from '../../redux/features/cart/cartSlice';
 import { toast } from 'sonner';
+import Loading from '../../components/shared/Loading';
 
 const ProductDetail = () => {
   const { id } = useParams();
@@ -11,7 +12,7 @@ const ProductDetail = () => {
   const dispatch = useAppDispatch();
 
   if (isLoading) {
-    return <Spin tip="Loading Product..." />;
+    return <Loading />;
   }
 
   const { image, name, price, description } = product?.data;
