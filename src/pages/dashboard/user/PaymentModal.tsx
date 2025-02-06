@@ -27,7 +27,9 @@ const PaymentModal = ({ paymentInfo, refetch }: TPaymentModalProps) => {
 
   return (
     <>
-      <Button onClick={showModal}>Pay</Button>
+      <Button onClick={showModal} color="primary" variant="outlined">
+        Pay
+      </Button>
       <Modal
         title={`Total Payment $${price}`}
         open={isModalOpen}

@@ -96,7 +96,7 @@ const AboutUs = () => {
               Frequently Asked Questions (FAQs)
             </span>
           </Title>
-          <Collapse accordion>
+          <Collapse accordion defaultActiveKey={['1']}>
             <Panel
               className="text-base"
               header="What types of stationery products do you offer?"

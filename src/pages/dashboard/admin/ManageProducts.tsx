@@ -135,7 +135,11 @@ const ManageProducts = () => {
         return (
           <div>
             <UpdateProductModal productInfo={item} refetch={refetch} />
-            <Button danger onClick={() => handleDelete(item)}>
+            <Button
+              danger
+              onClick={() => handleDelete(item)}
+              style={{ marginLeft: '8px' }}
+            >
               Delete
             </Button>
           </div>

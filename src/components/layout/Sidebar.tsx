@@ -70,7 +70,7 @@ const Sidebar = ({ collapsed, setCollapsed, screens }: ChildComponentProps) => {
       )}
       <div className="flex justify-center items-center my-5">
         <Link to={'/'}>
-          <img className="h-16" src={logo} alt="" />
+          <img className="lg:h-16 h-12" src={logo} alt="" />
         </Link>
       </div>
       <Menu

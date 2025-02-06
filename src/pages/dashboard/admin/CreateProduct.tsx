@@ -1,4 +1,4 @@
-import { Button, Col, Flex } from 'antd';
+import { Button, Card, Col, Row } from 'antd';
 import CustomForm from '../../../components/form/CustomForm';
 import CustomSelect from '../../../components/form/CustomSelect';
 import CustomInput from '../../../components/form/CustomInput';
@@ -45,8 +45,8 @@ const CreateProduct = () => {
         brand: data.brand,
         price: Number(data.price),
         category: data.category,
-        description: data.description,
         quantity: Number(data.quantity),
+        description: data.description,
         image: imgURL,
       };
 
@@ -64,31 +64,64 @@ const CreateProduct = () => {
   };
 
   return (
-    <div>
-      <h2>Add Product</h2>
-      <Flex justify="center" align="center">
-        <Col sm={18} lg={8}>
+    <div className="lg:m-8">
+      <Card
+        title="Add Product"
+        bordered={false}
+        style={{
+          maxWidth: '900px',
+          margin: '20px auto',
+          paddingBottom: '30px',
+        }}
+      >
+        <Col sm={24} lg={24}>
           <CustomForm onSubmit={onSubmit} resolver={zodResolver(productSchema)}>
-            <CustomInput type="text" name="name" label="Name" />
-            <CustomInput type="text" name="brand" label="Brand" />
-            <CustomInput type="text" name="price" label="Price" />
-            <CustomSelect
-              label="Category"
-              name="category"
-              options={categoryOptions}
-            />
-            <CustomTextArea name="description" label="Description" />
+            <Row gutter={12}>
+              <Col span={24} md={{ span: 24 }} lg={{ span: 24 }}>
+                <CustomInput type="text" name="name" label="Name" />
+              </Col>
+            </Row>
 
-            <CustomInput type="number" name="quantity" label="Quantity" />
+            <Row gutter={12}>
+              <Col span={24} md={{ span: 12 }} lg={{ span: 12 }}>
+                <CustomInput type="text" name="brand" label="Brand" />
+              </Col>
+              <Col span={24} md={{ span: 12 }} lg={{ span: 12 }}>
+                <CustomInput type="text" name="price" label="Price" />
+              </Col>
+            </Row>
 
-            <CustomUpload name="image" />
+            <Row gutter={12}>
+              <Col span={24} md={{ span: 12 }} lg={{ span: 12 }}>
+                <CustomSelect
+                  label="Category"
+                  name="category"
+                  options={categoryOptions}
+                />
+              </Col>
+              <Col span={24} md={{ span: 12 }} lg={{ span: 12 }}>
+                <CustomInput type="number" name="quantity" label="Quantity" />
+              </Col>
+            </Row>
+
+            <Row gutter={12}>
+              <Col span={24} md={{ span: 24 }} lg={{ span: 24 }}>
+                <CustomUpload name="image" />
+              </Col>
+            </Row>
+
+            <Row gutter={12}>
+              <Col span={24} md={{ span: 24 }} lg={{ span: 24 }}>
+                <CustomTextArea name="description" label="Description" />
+              </Col>
+            </Row>
 
             <Button type="primary" htmlType="submit">
               Submit
             </Button>
           </CustomForm>
         </Col>
-      </Flex>
+      </Card>
     </div>
   );
 };

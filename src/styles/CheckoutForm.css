@@ -18,7 +18,6 @@
     text-decoration: none;
     -webkit-transition: all 150ms ease;
     transition: all 150ms ease;
-    margin-top: 5px;
 }
 
 .payment-btn:hover {

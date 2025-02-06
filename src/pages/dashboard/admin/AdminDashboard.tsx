@@ -73,7 +73,7 @@ const AdminDashboard = () => {
   ];
 
   return (
-    <div className="m-8">
+    <div className="lg:m-8">
       <div className="flex lg:justify-start justify-center">
         <h1 className="text-xl lg:text-2xl text-secondary font-medium font-family">
           Hi Welcome {user?.name}! 👋

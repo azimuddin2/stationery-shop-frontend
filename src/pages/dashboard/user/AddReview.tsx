@@ -5,13 +5,15 @@ import { zodResolver } from '@hookform/resolvers/zod';
 import CustomInput from '../../../components/form/CustomInput';
 import CustomSelect from '../../../components/form/CustomSelect';
 import CustomTextArea from '../../../components/form/CustomTextArea';
-import CustomButton from '../../../components/shared/CustomButton';
 import { toast } from 'sonner';
 import { FieldValues, SubmitHandler } from 'react-hook-form';
 import { reviewSchema } from '../../../schemas/review.schema';
 import { useAddReviewMutation } from '../../../redux/features/review/reviewApi';
 import { TResponse } from '../../../types';
 import { TReview } from '../../../types/review.type';
+import { Button, Card, Col } from 'antd';
+import { useAppSelector } from '../../../redux/hooks';
+import { selectCurrentUser } from '../../../redux/features/auth/authSlice';
 
 type TCountry = {
   name: {
@@ -27,11 +29,16 @@ type TCountry = {
 };
 
 const AddReview = () => {
+  const user = useAppSelector(selectCurrentUser);
   const [countries, setCountries] = useState<TCountry[]>([]);
   const [rating, setRating] = useState<number>(0);
   const totalStars = 5 as number;
 
   const [addReview] = useAddReviewMutation();
+
+  const defaultValues = {
+    name: user?.name,
+  };
 
   useEffect(() => {
     fetch('https://restcountries.com/v3.1/all')
@@ -74,35 +81,50 @@ const AddReview = () => {
   };
 
   return (
-    <div className="my-12">
-      <div className="px-5 py-8 lg:p-12 w-11/12 lg:w-xl mx-auto bg-[#ffffff] rounded">
-        <CustomForm onSubmit={onSubmit} resolver={zodResolver(reviewSchema)}>
-          <div className="text-center mb-6">
-            <h2 className="text-xl font-medium mb-2">Give a Review!</h2>
-            <div className="flex gap-1 justify-center items-center mt-6">
-              {Array.from({ length: totalStars }, (_, index) => (
-                <Star
-                  key={index}
-                  className={`w-6 h-6 cursor-pointer ${
-                    index < rating
-                      ? 'text-yellow-500 fill-yellow-500'
-                      : 'text-gray-400'
-                  }`}
-                  onClick={() => setRating(index + 1)}
-                />
-              ))}
+    <div className="lg:m-8">
+      <Card
+        title="Give a Review"
+        bordered={false}
+        style={{
+          maxWidth: '500px',
+          margin: '20px auto',
+          paddingBottom: '15px',
+        }}
+      >
+        <Col sm={24} lg={24}>
+          <CustomForm
+            onSubmit={onSubmit}
+            resolver={zodResolver(reviewSchema)}
+            defaultValues={defaultValues}
+          >
+            <div className="text-center mb-5">
+              <div className="flex gap-1 justify-center items-center">
+                {Array.from({ length: totalStars }, (_, index) => (
+                  <Star
+                    key={index}
+                    className={`w-6 h-6 cursor-pointer ${
+                      index < rating
+                        ? 'text-yellow-500 fill-yellow-500'
+                        : 'text-gray-400'
+                    }`}
+                    onClick={() => setRating(index + 1)}
+                  />
+                ))}
+              </div>
             </div>
-          </div>
-          <CustomInput type="text" name="name" label="Name" />
-          <CustomSelect
-            label="Country"
-            name="location"
-            options={categoryOptions}
-          />
-          <CustomTextArea name="description" label="Message" />
-          <CustomButton>Submit</CustomButton>
-        </CustomForm>
-      </div>
+            <CustomInput type="text" name="name" label="Name" />
+            <CustomSelect
+              label="Country"
+              name="location"
+              options={categoryOptions}
+            />
+            <CustomTextArea name="description" label="Message" />
+            <Button type="primary" htmlType="submit">
+              Submit
+            </Button>
+          </CustomForm>
+        </Col>
+      </Card>
     </div>
   );
 };

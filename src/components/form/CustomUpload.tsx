@@ -1,6 +1,6 @@
 import { Form } from 'antd';
 import { Controller } from 'react-hook-form';
-import { BiImageAdd } from 'react-icons/bi'; // ✅ Import Image Upload Icon
+import { BiImageAdd } from 'react-icons/bi';
 import { MdErrorOutline } from 'react-icons/md';
 
 type TUploadProps = {
@@ -19,11 +19,12 @@ const CustomUpload = ({ name }: TUploadProps) => {
               alignItems: 'center',
               justifyContent: 'center',
               gap: '8px',
-              padding: '20px 0px',
+              padding: '24px 0px',
               border: '1px dashed #3F90FC',
               borderRadius: '8px',
               cursor: 'pointer',
               width: '100%',
+              marginTop: '10px',
             }}
           >
             <BiImageAdd size={30} color="#3F90FC" />

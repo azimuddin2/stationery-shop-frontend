@@ -1,5 +1,6 @@
 import { Button, InputNumber, Table } from 'antd';
 import {
+  clearCart,
   removeFromCart,
   selectCartItems,
   selectCartTotal,
@@ -10,6 +11,7 @@ import { selectCurrentUser } from '../../redux/features/auth/authSlice';
 import { usePlaceOrderMutation } from '../../redux/features/order/orderApi';
 import { toast } from 'sonner';
 import { useNavigate } from 'react-router-dom';
+import { MdOutlineShoppingCartCheckout } from 'react-icons/md';
 
 const Cart = () => {
   const dispatch = useAppDispatch();
@@ -41,6 +43,7 @@ const Cart = () => {
       if (res.error) {
         toast.error(res.error.data.message, { id: toastId, duration: 2000 });
       } else {
+        dispatch(clearCart());
         toast.success(res.message, { id: toastId, duration: 2000 });
         navigate(`/${user?.role}/order-view`);
       }
@@ -92,26 +95,27 @@ const Cart = () => {
   ];
 
   return (
-    <div className="max-w-4xl mx-auto p-5">
-      <h1 className="text-2xl font-bold text-center">Shopping Cart</h1>
+    <section className="lg:max-w-5xl lg:mx-auto px-5 my-12">
+      <h1 className="text-2xl font-bold text-center mb-3">Shopping Cart</h1>
       <Table
         dataSource={cartItems}
         columns={columns}
         rowKey="_id"
         pagination={false}
+        scroll={{ x: 'max-content' }}
       />
       <h2 className="text-xl font-bold mt-5">
         Total: ${totalAmount.toFixed(2)}
       </h2>
-      <Button
-        disabled={cartItems.length === 0}
-        type="primary"
-        className="mt-3"
+      <button
         onClick={handleOrder}
+        disabled={cartItems.length === 0}
+        className="bg-[#3F90FC] hover:bg-[#1677ff] text-white cursor-pointer px-6 py-1 rounded-sm flex justify-center items-center mt-5"
       >
-        Order Now
-      </Button>
-    </div>
+        <span>Check Out</span>
+        <MdOutlineShoppingCartCheckout size={20} className="ml-1" />
+      </button>
+    </section>
   );
 };
 

@@ -1,4 +1,4 @@
-import { Button, Col, Flex } from 'antd';
+import { Button, Card, Col } from 'antd';
 import { selectCurrentUser } from '../../../redux/features/auth/authSlice';
 import { useAppSelector } from '../../../redux/hooks';
 import CustomForm from '../../../components/form/CustomForm';
@@ -10,7 +10,7 @@ import { FieldValues, SubmitHandler } from 'react-hook-form';
 import { toast } from 'sonner';
 import { useUpdateUserMutation } from '../../../redux/features/user/userApi';
 import { TResponse } from '../../../types';
-import { TUser } from '../../../types/user.type';
+import { TRegisterUser } from '../../../types/user.type';
 
 const EditProfile = () => {
   const user = useAppSelector(selectCurrentUser);
@@ -59,7 +59,9 @@ const EditProfile = () => {
         },
       };
 
-      const res = (await updateUser(updateData)) as TResponse<TUser | any>;
+      const res = (await updateUser(updateData)) as TResponse<
+        TRegisterUser | any
+      >;
 
       if (res.error) {
         toast.error(res.error.data.message, { id: toastId });
@@ -72,10 +74,17 @@ const EditProfile = () => {
   };
 
   return (
-    <div className=" bg-white py-10">
-      <h1>Edit Profile</h1>
-      <Flex justify="center" align="center">
-        <Col sm={18} lg={8}>
+    <div className="lg:m-8">
+      <Card
+        title="Edit Profile"
+        bordered={false}
+        style={{
+          maxWidth: '500px',
+          margin: '20px auto',
+          paddingBottom: '15px',
+        }}
+      >
+        <Col sm={24} lg={24}>
           <CustomForm
             onSubmit={onSubmit}
             defaultValues={defaultValues}
@@ -90,7 +99,7 @@ const EditProfile = () => {
             </Button>
           </CustomForm>
         </Col>
-      </Flex>
+      </Card>
     </div>
   );
 };
