@@ -15,6 +15,7 @@ import {
 import { TProduct } from '../../../types/product.type';
 import UpdateProductModal from './UpdateProductModal';
 import Swal from 'sweetalert2';
+import useTitle from '../../../hooks/useTitle';
 
 type TTableData = Pick<
   TProduct,
@@ -22,6 +23,7 @@ type TTableData = Pick<
 >;
 
 const ManageProducts = () => {
+  useTitle('Manage Products');
   const [params, setParams] = useState<TQueryParam[]>([]);
   const [page, setPage] = useState(1);
   const [limit, setLimit] = useState(6);

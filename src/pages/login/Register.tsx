@@ -10,8 +10,10 @@ import { FieldValues, SubmitHandler } from 'react-hook-form';
 import logo from '../../assets/images/dark-logo.png';
 import registerGif from '../../assets/images/register.gif';
 import { useState } from 'react';
+import useTitle from '../../hooks/useTitle';
 
 const Register = () => {
+  useTitle('Register');
   const [accepted, setAccepted] = useState(false);
   const navigate = useNavigate();
 

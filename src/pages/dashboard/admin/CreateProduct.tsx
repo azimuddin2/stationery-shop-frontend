@@ -13,8 +13,10 @@ import { zodResolver } from '@hookform/resolvers/zod';
 import { productSchema } from '../../../schemas/product.schema';
 import { TProduct } from '../../../types/product.type';
 import { TResponse } from '../../../types';
+import useTitle from '../../../hooks/useTitle';
 
 const CreateProduct = () => {
+  useTitle('Add Product');
   const [addProduct] = useAddProductMutation();
   const navigate = useNavigate();
 
@@ -71,7 +73,7 @@ const CreateProduct = () => {
         style={{
           maxWidth: '900px',
           margin: '20px auto',
-          paddingBottom: '30px',
+          paddingBottom: '20px',
         }}
       >
         <Col sm={24} lg={24}>

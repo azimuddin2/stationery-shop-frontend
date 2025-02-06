@@ -9,6 +9,7 @@ import { selectCurrentUser } from '../../../redux/features/auth/authSlice';
 import { useEffect, useState } from 'react';
 import PaymentModal from './PaymentModal';
 import Swal from 'sweetalert2';
+import useTitle from '../../../hooks/useTitle';
 
 type TTableData = Pick<
   TOrder,
@@ -16,6 +17,7 @@ type TTableData = Pick<
 >;
 
 const OrdersList = () => {
+  useTitle('Order View');
   const user = useAppSelector(selectCurrentUser);
   const [email, setEmail] = useState<string | null>(null);
 

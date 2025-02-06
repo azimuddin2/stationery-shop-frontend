@@ -19,6 +19,7 @@ import {
 import { toast } from 'sonner';
 import { FieldValues, SubmitHandler } from 'react-hook-form';
 import Swal from 'sweetalert2';
+import useTitle from '../../../hooks/useTitle';
 
 type TTableData = Pick<
   TOrder,
@@ -37,6 +38,7 @@ const items = [
 ];
 
 const ManageOrders = () => {
+  useTitle('Manage Orders');
   const [orderId, setOrderId] = useState('');
   const [params, setParams] = useState<TQueryParam[]>([]);
   const [page, setPage] = useState(1);

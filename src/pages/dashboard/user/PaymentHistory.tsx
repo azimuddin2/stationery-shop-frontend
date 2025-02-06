@@ -4,6 +4,7 @@ import { useAppSelector } from '../../../redux/hooks';
 import { useGetPaymentsByEmailQuery } from '../../../redux/features/payment/paymentApi';
 import { Card, Table, TableColumnsType, Tag } from 'antd';
 import { TPayment } from '../../../types/payment.type';
+import useTitle from '../../../hooks/useTitle';
 
 type TTableData = Pick<
   TPayment,
@@ -11,6 +12,7 @@ type TTableData = Pick<
 >;
 
 const PaymentHistory = () => {
+  useTitle('Payment History');
   const user = useAppSelector(selectCurrentUser);
   const [email, setEmail] = useState<string | null>(null);
 

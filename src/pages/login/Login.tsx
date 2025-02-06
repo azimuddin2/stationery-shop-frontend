@@ -13,8 +13,10 @@ import { verifyToken } from '../../utils/verifyToken';
 import logo from '../../assets/images/dark-logo.png';
 import loginGif from '../../assets/images/login.gif';
 import { useState } from 'react';
+import useTitle from '../../hooks/useTitle';
 
 const Login = () => {
+  useTitle('Login');
   const [accepted, setAccepted] = useState(false);
   const dispatch = useAppDispatch();
   const navigate = useNavigate();

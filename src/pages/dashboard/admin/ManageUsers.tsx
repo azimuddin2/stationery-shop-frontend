@@ -17,6 +17,7 @@ import {
 import { FieldValues, SubmitHandler } from 'react-hook-form';
 import { TRegisterUser } from '../../../types/user.type';
 import { toast } from 'sonner';
+import useTitle from '../../../hooks/useTitle';
 
 type TTableData = Pick<TRegisterUser, 'name' | 'email' | 'role' | 'status'>;
 
@@ -32,6 +33,7 @@ const items = [
 ];
 
 const ManageUsers = () => {
+  useTitle('Manage Users');
   const [userId, setUserId] = useState('');
   const [params, setParams] = useState<TQueryParam[]>([]);
   const [page, setPage] = useState(1);

@@ -5,10 +5,12 @@ import ProductCard from '../../components/shared/ProductCard';
 import { Pagination, Select, Input } from 'antd';
 import { categoryOptions } from '../../constants/product';
 import Loading from '../../components/shared/Loading';
+import useTitle from '../../hooks/useTitle';
 
 const { Search } = Input;
 
 const Products = () => {
+  useTitle('All Products');
   const [params, setParams] = useState<TQueryParam[]>([]);
   const [page, setPage] = useState(1);
   const [limit, setLimit] = useState(6);

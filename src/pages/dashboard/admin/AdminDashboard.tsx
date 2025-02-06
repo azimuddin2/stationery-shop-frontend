@@ -17,8 +17,10 @@ import {
   PieChart,
   Pie,
 } from 'recharts';
+import useTitle from '../../../hooks/useTitle';
 
 const AdminDashboard = () => {
+  useTitle('Dashboard');
   const user = useAppSelector(selectCurrentUser);
 
   const data = [

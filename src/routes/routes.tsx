@@ -12,11 +12,13 @@ import ProductDetail from '../pages/ProductDetail/ProductDetail';
 import Cart from '../pages/cart/Cart';
 import ProtectedRoute from '../components/layout/ProtectedRoute';
 import AboutUs from '../pages/about/AboutUs';
+import NotFound from '../pages/notFound/NotFound';
 
 const router = createBrowserRouter([
   {
     path: '/',
     element: <MainLayout />,
+    errorElement: <NotFound />,
     children: [
       {
         index: true,

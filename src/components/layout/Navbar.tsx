@@ -9,7 +9,7 @@ import { useAppDispatch, useAppSelector } from '../../redux/hooks';
 import { logout, selectCurrentUser } from '../../redux/features/auth/authSlice';
 import { selectCartItems } from '../../redux/features/cart/cartSlice';
 import { MdOutlineShoppingCart } from 'react-icons/md';
-import { CgLogIn } from 'react-icons/cg';
+import { AiOutlineLogin, AiOutlineLogout } from 'react-icons/ai';
 
 const Navbar = () => {
   const [open, setOpen] = useState(false);
@@ -54,7 +54,7 @@ const Navbar = () => {
         >
           <MdOutlineShoppingCart size={25} className="text-secondary" />
           {cartCount > 0 && (
-            <span className="absolute -top-2 -right-2 bg-[#3F90FC] text-white text-xs font-bold rounded-full w-5 h-5 flex items-center justify-center">
+            <span className="absolute -top-2 -right-2 bg-[#FF4D4F] text-white text-xs font-bold rounded-full w-5 h-5 flex items-center justify-center">
               {cartCount}
             </span>
           )}
@@ -62,12 +62,12 @@ const Navbar = () => {
         <li>
           {user?.email ? (
             <button onClick={handleLogout} className="register-btn">
-              <span className="mr-1">Logout</span> <CgLogIn size={20} />
+              <span className="mr-1">Logout</span> <AiOutlineLogout size={20} />
             </button>
           ) : (
             <Link to="/login">
               <button className="register-btn">
-                <span className="mr-1">Login</span> <CgLogIn size={20} />
+                <span className="mr-1">Login</span> <AiOutlineLogin size={20} />
               </button>
             </Link>
           )}

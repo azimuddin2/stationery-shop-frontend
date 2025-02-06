@@ -5,8 +5,10 @@ import { addToCart } from '../../redux/features/cart/cartSlice';
 import { toast } from 'sonner';
 import Loading from '../../components/shared/Loading';
 import { MdOutlineShoppingCart } from 'react-icons/md';
+import useTitle from '../../hooks/useTitle';
 
 const ProductDetail = () => {
+  useTitle('Product Details');
   const { id } = useParams();
   const { data: product, isLoading } = useGetProductByIdQuery(id);
   const dispatch = useAppDispatch();

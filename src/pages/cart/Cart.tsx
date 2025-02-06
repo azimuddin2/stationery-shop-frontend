@@ -12,8 +12,10 @@ import { usePlaceOrderMutation } from '../../redux/features/order/orderApi';
 import { toast } from 'sonner';
 import { useNavigate } from 'react-router-dom';
 import { MdOutlineShoppingCartCheckout } from 'react-icons/md';
+import useTitle from '../../hooks/useTitle';
 
 const Cart = () => {
+  useTitle('Cart');
   const dispatch = useAppDispatch();
   const cartItems = useAppSelector(selectCartItems);
   const totalAmount = useAppSelector(selectCartTotal);

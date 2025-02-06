@@ -1,11 +1,13 @@
 import { Card, Typography, List, Collapse } from 'antd';
 import { CheckCircleOutlined } from '@ant-design/icons';
 import { Fade } from 'react-awesome-reveal';
+import useTitle from '../../hooks/useTitle';
 const { Panel } = Collapse;
 const { Title } = Typography;
 const highlightStyle = { color: '#181818', fontWeight: 'medium' };
 
 const AboutUs = () => {
+  useTitle('About Us');
   return (
     <section className="my-8">
       <div style={{ maxWidth: 1024, margin: 'auto', padding: 20 }}>

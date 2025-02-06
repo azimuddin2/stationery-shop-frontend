@@ -11,8 +11,10 @@ import { toast } from 'sonner';
 import { useUpdateUserMutation } from '../../../redux/features/user/userApi';
 import { TResponse } from '../../../types';
 import { TRegisterUser } from '../../../types/user.type';
+import useTitle from '../../../hooks/useTitle';
 
 const EditProfile = () => {
+  useTitle('Edit Profile');
   const user = useAppSelector(selectCurrentUser);
   const [updateUser] = useUpdateUserMutation();
 

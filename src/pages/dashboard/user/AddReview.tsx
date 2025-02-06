@@ -14,6 +14,7 @@ import { TReview } from '../../../types/review.type';
 import { Button, Card, Col } from 'antd';
 import { useAppSelector } from '../../../redux/hooks';
 import { selectCurrentUser } from '../../../redux/features/auth/authSlice';
+import useTitle from '../../../hooks/useTitle';
 
 type TCountry = {
   name: {
@@ -29,6 +30,7 @@ type TCountry = {
 };
 
 const AddReview = () => {
+  useTitle('Add Review');
   const user = useAppSelector(selectCurrentUser);
   const [countries, setCountries] = useState<TCountry[]>([]);
   const [rating, setRating] = useState<number>(0);
