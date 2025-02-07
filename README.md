@@ -1,50 +1,118 @@
-# React + TypeScript + Vite
+# Stationery Shop Web Application
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## 🚀 Frontend Development
 
-Currently, two official plugins are available:
+## Overview
+The Stationery Shop application is a user-friendly e-commerce platform with secure authentication, intuitive product management, and a seamless shopping experience. The application is designed to be responsive and visually appealing while maintaining strong security practices.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Features
+### User Authentication & Authorization
+- **User Registration & Login:**
+  - Register with name, email, and password.
+  - User role: `user` & `admin`.
+  - Secure password hashing before storage.
+  - Login using email and password.
+- **JWT Authentication:**
+  - JWT tokens for session management.
+  - Tokens stored in cookies storage.
+- **Logout:**
+  - Clears authentication token on logout.
 
-## Expanding the ESLint configuration
+### Public Pages
+#### Home Page
+- **Navigation Bar:**
+  - Logo, menu links, login buttons.
+- **Hero Section:**
+  - Highlight key features and special offers.
+  - product image carousel.
+- **Featured Products:**
+  - Showcase up to 6 top products.
+  - "View All" button navigates to the product listing.
+- **Additional Sections:**
+  - Company Overview, Testimonials, Image Gallery & Office Location.
+- **Footer:**
+  - Essential links, social media, and contact information.
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+#### Products Page
+- **Search & Filter Options:**
+  - Search by title, category.
+  - Filter by price range, category.
+- **Dynamic Product Display:**
+  - Search and filter results update in real-time.
+- **Product Cards:**
+  - Show product name, price, image, and "View Details" button.
 
-- Configure the top-level `parserOptions` property like this:
+#### Product Details
+- **Detailed View:**
+  - High-quality image and comprehensive product details.
+- **Cart Interaction:**
+  - "Add to Cart" button for easy purchase.
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+#### About Page
+- Information about the shop and its mission - What We Offer - Why Choose Us - FAQ.**
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+### Private Pages
+#### Cart & Checkout
+- **Cart Management:**
+  - Users can add and remove products.
+  - Quantity cannot exceed available stock.
+- **Order Summary:**
+  - Shows total price, user details, and product list.
+- **Order Confirmation:**
+  - "Order Now" button for purchase confirmation.
+- **Payment Integration:**
+  - Stripe payment gateways.
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
+#### User Dashboard
+- **Order Tracking:**
+  - View order history and statuses.
+- **Payment History:**
+  - View payment history and payment statuses.
+- **Add Review:**
+  - Add client review feedback option.
+- **Profile Edit:**
+  - Update personal details and default shipping address and image upload.
 
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
-```
+#### Admin Dashboard
+- **Dashboard:**
+  - Admin access dashboard company full overview info.
+- **User Management:**
+  - Ability to status user accounts `In-progress` & `Blocked`.
+- **Product Management:**
+  - Add, edit, and delete products.
+- **Order Management:**
+  - Approve and update order statuses from "Pending" to "Shipping".
+- **Profile Edit:**
+  - Update personal details and default shipping address and image upload.  
+
+### UI/UX Enhancements
+- **Fully Responsive:**
+  - Works on all devices and screen sizes.
+- **Error Handling:**
+  - Friendly messages for login errors, duplicate emails, and stock issues.
+- **Loading Indicators:**
+  - Spinners/loaders during API requests.
+- **Toasts & Alerts:**
+  - Notifications for key actions like login, logout, and purchases.
+
+## Technologies Used
+- **Frontend:** TypeScript, React.js, Redux, Tailwind CSS.
+- **State Management:** Redux Toolkit
+- **Authentication:** JWT
+- **API Calls:** Redux RTK Query
+- **Routing:** React Router
+- **Form:** React Hook Form
+- **UI Components:** ANT Design
+
+## Installation
+### Prerequisites
+- Node.js & npm installed
+
+## Deployment
+- Deployable on Vercel platforms.
+
+## 👨‍💻 Contributors
+- **[MD. AZIM UDDIN]**
+
+## License
+This project is licensed under the MIT License.
