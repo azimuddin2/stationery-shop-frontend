@@ -29,7 +29,7 @@ const ProductDetail = () => {
       <h1 className="text-2xl font-medium mb-5">{name}</h1>
       <img src={image} alt={name} className="w-96 rounded" />
       <p className="text-lg mt-4 font-medium text-secondary">Price: ${price}</p>
-      <h2 className='text-xl my-2'>Category: {category}</h2>
+      <h2 className="text-xl my-2">Category: {category}</h2>
       <p className="text-accent">{description}</p>
       <button
         onClick={handleAddtoCart}

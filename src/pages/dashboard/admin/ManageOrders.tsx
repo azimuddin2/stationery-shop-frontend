@@ -42,7 +42,7 @@ const ManageOrders = () => {
   const [orderId, setOrderId] = useState('');
   const [params, setParams] = useState<TQueryParam[]>([]);
   const [page, setPage] = useState(1);
-  const [limit, setLimit] = useState(4);
+  const [limit, setLimit] = useState(6);
   const {
     data: ordersData,
     isFetching,

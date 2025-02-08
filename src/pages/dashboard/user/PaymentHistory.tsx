@@ -77,20 +77,22 @@ const PaymentHistory = () => {
   ];
 
   return (
-    <Card
-      title="Payment History"
-      bordered={false}
-      style={{ margin: '40px', paddingBottom: '30px' }}
-    >
-      <Table
-        loading={isFetching}
-        dataSource={tableData}
-        columns={columns}
-        rowKey="_id"
-        pagination={false}
-        scroll={{ x: 'max-content' }}
-      />
-    </Card>
+    <div className="lg:m-8">
+      <Card
+        title="Payment History"
+        bordered={false}
+        style={{ margin: '20px auto', paddingBottom: '30px' }}
+      >
+        <Table
+          loading={isFetching}
+          dataSource={tableData}
+          columns={columns}
+          rowKey="_id"
+          pagination={false}
+          scroll={{ x: 'max-content' }}
+        />
+      </Card>
+    </div>
   );
 };
 

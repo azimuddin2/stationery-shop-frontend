@@ -37,7 +37,7 @@ const ManageUsers = () => {
   const [userId, setUserId] = useState('');
   const [params, setParams] = useState<TQueryParam[]>([]);
   const [page, setPage] = useState(1);
-  const [limit, setLimit] = useState(4);
+  const [limit, setLimit] = useState(6);
   const {
     data: usersData,
     isFetching,
@@ -175,7 +175,6 @@ const ManageUsers = () => {
         title="Manage Users"
         bordered={false}
         style={{
-          maxWidth: '900px',
           margin: '20px auto',
           paddingBottom: '30px',
         }}

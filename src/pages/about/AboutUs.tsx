@@ -18,7 +18,7 @@ const AboutUs = () => {
           <Fade
             cascade
             damping={1e-1}
-            className="text-2xl lg:text-4xl text-secondary font-semibold mb-3"
+            className="text-xl lg:text-4xl text-secondary font-semibold mb-3"
           >
             Welcome to Stationery Shop.
           </Fade>

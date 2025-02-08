@@ -76,7 +76,7 @@ const Banner = () => {
         ))}
       </Swiper>
 
-      <div className="flex-1">
+      <div className="flex-1 mt-5 lg:mt-0">
         <Fade
           cascade
           damping={1e-1}
@@ -84,7 +84,7 @@ const Banner = () => {
         >
           Sale up to 30% off.
         </Fade>
-        <h2 className="text-3xl text-secondary font-bold my-3">
+        <h2 className="text-2xl lg:text-3xl text-secondary font-bold my-3">
           Elevate Your Desk with Premium Stationery Shop
         </h2>
         <p className="text-accent mb-5">
