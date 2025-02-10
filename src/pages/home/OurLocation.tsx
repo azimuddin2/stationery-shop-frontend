@@ -6,7 +6,7 @@ const OurLocation = () => {
   return (
     <section className="my-12">
       <div className="text-center mb-8 lg:w-2xl mx-auto">
-        <h2 className="font-medium text-2xl lg:text-3xl leading-snug text-secondary">
+        <h2 className="font-medium text-3xl leading-snug text-secondary">
           Our Location
         </h2>
         <p className="text-accent text-sm mt-2">

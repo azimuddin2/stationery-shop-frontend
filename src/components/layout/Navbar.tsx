@@ -48,17 +48,19 @@ const Navbar = () => {
             )}
           </li>
         )}
-        <li
-          className="relative cursor-pointer mr-5 lg:block hidden"
-          onClick={() => navigate('/cart')}
-        >
-          <MdOutlineShoppingCart size={25} className="text-secondary" />
-          {cartCount > 0 && (
-            <span className="absolute -top-2 -right-2 bg-[#FF4D4F] text-white text-xs font-bold rounded-full w-5 h-5 flex items-center justify-center">
-              {cartCount}
-            </span>
-          )}
-        </li>
+        {user?.role === 'user' && (
+          <li
+            className="relative cursor-pointer mr-5 lg:block hidden"
+            onClick={() => navigate('/cart')}
+          >
+            <MdOutlineShoppingCart size={25} className="text-secondary" />
+            {cartCount > 0 && (
+              <span className="absolute -top-2 -right-2 bg-[#FF4D4F] text-white text-xs font-bold rounded-full w-5 h-5 flex items-center justify-center">
+                {cartCount}
+              </span>
+            )}
+          </li>
+        )}
         <li>
           {user?.email ? (
             <button onClick={handleLogout} className="register-btn">
@@ -73,17 +75,19 @@ const Navbar = () => {
           )}
         </li>
       </ul>
-      <div
-        className="relative cursor-pointer lg:hidden mr-[-90px]"
-        onClick={() => navigate('/cart')}
-      >
-        <MdOutlineShoppingCart size={25} className="text-secondary" />
-        {cartCount > 0 && (
-          <span className="absolute -top-2 -right-2 bg-[#3F90FC] text-white text-xs font-bold rounded-full w-5 h-5 flex items-center justify-center">
-            {cartCount}
-          </span>
-        )}
-      </div>
+      {user?.role === 'user' && (
+        <div
+          className="relative cursor-pointer lg:hidden mr-[-90px]"
+          onClick={() => navigate('/cart')}
+        >
+          <MdOutlineShoppingCart size={25} className="text-secondary" />
+          {cartCount > 0 && (
+            <span className="absolute -top-2 -right-2 bg-[#3F90FC] text-white text-xs font-bold rounded-full w-5 h-5 flex items-center justify-center">
+              {cartCount}
+            </span>
+          )}
+        </div>
+      )}
       <div id="mobile" onClick={() => setOpen(!open)}>
         {open ? (
           <IoClose className="nav-icon" />

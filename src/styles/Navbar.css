@@ -19,7 +19,7 @@
     font-size: 16px;
     font-weight: 400;
     text-decoration: none;
-    margin-right: 28px;
+    margin-right: 30px;
     padding: 0 6px;
     font-family: "Roboto", sans-serif;
 }
@@ -144,12 +144,12 @@
         position: absolute;
         top: 68px;
         right: -350px;
-        width: 340px;
+        width: 320px;
         border-radius: 10px;
         background-color: #fff;
         box-shadow: 0 0px 20px rgb(0 0 0 / 10%);
         padding-left: 0px;
-        padding: 28px;
+        padding: 24px;
         transition: 0.10s ease-in-out;
     }
 
@@ -161,7 +161,7 @@
     }
 
     #navbar li {
-        margin-bottom: 12px;
+        margin-bottom: 16px;
     }
 
     #mobile {
