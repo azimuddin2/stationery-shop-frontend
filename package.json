@@ -4,8 +4,8 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "dev": "vite",
-    "build": "tsc && vite build",
+    "dev": "node api.js && vite",
+    "build": "node api.js && tsc && vite build",
     "lint": "npx eslint src --ignore-pattern '.js,.ts'",
     "lint:fix": "npx eslint src --fix",
     "prettier": "npx prettier --ignore-path .prettierignore --write \"./src/**/*.{js,jsx,ts,tsx,json}\"",
