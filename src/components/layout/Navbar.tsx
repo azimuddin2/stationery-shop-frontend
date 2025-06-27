@@ -27,7 +27,7 @@ const Navbar = () => {
   return (
     <nav className="header lg:max-w-7xl lg:mx-auto px-5">
       <Link to="/">
-        <img className="w-full h-10 lg:h-16" src={logo} alt="Logo" />
+        <img className="w-full h-10 lg:h-14" src={logo} alt="Logo" />
       </Link>
       <ul id="navbar" className={open ? '#navbar active' : '#navbar'}>
         <li>
