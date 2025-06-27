@@ -7,7 +7,7 @@ import Loading from '../../components/shared/Loading';
 const FeaturedProducts = () => {
   const { data: productsData, isFetching } = useGetAllProductQuery([]);
 
-  const productsCollection = productsData?.data?.slice(0, 6);
+  const productsCollection = productsData?.data?.slice(0, 8);
 
   if (isFetching) {
     return <Loading />;
@@ -24,7 +24,7 @@ const FeaturedProducts = () => {
           more—perfect for students, professionals, and artists.
         </p>
       </div>
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
         {productsCollection?.map((item) => (
           <ProductCard key={item._id} item={item} />
         ))}

@@ -12,7 +12,7 @@ import { toast } from 'sonner';
 import { TResponse } from '../../types';
 
 const baseQuery = fetchBaseQuery({
-  baseUrl: 'https://stationery-shop-backend-rose.vercel.app/api',
+  baseUrl: 'http://localhost:5000/api',
   credentials: 'include',
   prepareHeaders: (headers, { getState }) => {
     const token = (getState() as RootState).auth.token;

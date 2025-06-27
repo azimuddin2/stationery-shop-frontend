@@ -4,7 +4,6 @@ import BusinessOverview from './BusinessOverview';
 import CompanyLogo from './CompanyLogo';
 import FeaturedProducts from './FeaturedProducts';
 import ImageGallery from './ImageGallery';
-import OurLocation from './OurLocation';
 import Reviews from './Reviews';
 
 const Home = () => {
@@ -17,7 +16,6 @@ const Home = () => {
       <BusinessOverview />
       <ImageGallery />
       <Reviews />
-      <OurLocation />
     </div>
   );
 };

@@ -13,6 +13,7 @@ import Cart from '../pages/cart/Cart';
 import ProtectedRoute from '../components/layout/ProtectedRoute';
 import AboutUs from '../pages/about/AboutUs';
 import NotFound from '../pages/notFound/NotFound';
+import Contact from '../pages/contact/Contact';
 
 const router = createBrowserRouter([
   {
@@ -35,6 +36,10 @@ const router = createBrowserRouter([
       {
         path: 'about-us',
         element: <AboutUs />,
+      },
+      {
+        path: 'contact-us',
+        element: <Contact />,
       },
       {
         path: 'cart',

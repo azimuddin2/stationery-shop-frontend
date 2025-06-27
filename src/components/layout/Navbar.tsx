@@ -39,6 +39,9 @@ const Navbar = () => {
         <li>
           <CustomLink to="/about-us">About</CustomLink>
         </li>
+        <li>
+          <CustomLink to="/contact-us">Contact Us</CustomLink>
+        </li>
         {user?.email && (
           <li>
             {user.role === 'admin' ? (
